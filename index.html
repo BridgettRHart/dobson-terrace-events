@@ -246,13 +246,6 @@ function getColorClass(e) {
   return 'color-prep';
 }
 
-window.addEventListener('DOMContentLoaded', loadEvents);
-
-// Fallback in case DOMContentLoaded already fired
-if (document.readyState === 'complete' || document.readyState === 'interactive') {
-  setTimeout(loadEvents, 100);
-}
-
 async function airtable(path, method = 'GET', body = null) {
   const opts = { method, headers: { 'Content-Type': 'application/json' } };
   if (body) opts.body = JSON.stringify(body);
@@ -454,4 +447,11 @@ function openModal(id) { document.getElementById(id).classList.add('open'); docu
 function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
 function closeOnOverlay(e, id) { if (e.target.id === id) closeModal(id); }
 function esc(s) { return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
-function fmtDate(iso) { return new Date(iso).toLocaleDateString('en-US'
+function fmtDate(iso) { return new Date(iso).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'America/Phoenix'}); }
+function fmtTime(iso) { return new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true,timeZone:'America/Phoenix'}); }
+
+// ─── INIT — called after all functions defined ────────────────
+loadEvents();
+</script>
+</body>
+</html>
