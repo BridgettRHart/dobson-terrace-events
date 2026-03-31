@@ -2,448 +2,2118 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="HandheldFriendly" content="true">
-<title>Dobson Terrace — Spring 2026 Events</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dobson Terrace · The Approved Garden</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --sage: #6b8f6b;
-    --sage-light: #a8c5a8;
-    --sage-pale: #e8f0e8;
-    --sage-dark: #3d5c3d;
-    --terra: #c4704a;
-    --terra-light: #e8a882;
-    --terra-pale: #fdf0ea;
-    --cream: #faf7f2;
-    --charcoal: #2c2c2c;
-    --mid-gray: #6b6b6b;
-    --light-gray: #e8e4df;
-    --border: #d4cec7;
-    --shadow-sm: 0 2px 8px rgba(44,44,44,0.08);
-    --shadow-md: 0 4px 20px rgba(44,44,44,0.12);
-    --shadow-lg: 0 8px 40px rgba(44,44,44,0.16);
-    --radius: 12px;
-    --radius-sm: 8px;
-  }
+/* ── TEMPLATE CONFIG (swap per community) ───────────────────────── */
+:root {
+  --community-name: "Dobson Terrace";
+  --primary:        #2C5F2D;
+  --primary-light:  #E8F0E9;
+  --accent:         #C4622D;
+  --accent-light:   #F5EDE7;
+  --sand:           #F5F0E8;
+  --sand-dark:      #E8DCC8;
+  --charcoal:       #2D2D2D;
+  --mid:            #666;
+  --light:          #AAA;
+  --white:          #FFFFFF;
+  --portal-url:     "https://portal.trestlemanagement.com";
+  --arc-email:      "info@trestlemanagement.com";
+  --manager-phone:  "(480) 422-0888";
+}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; max-width: 100vw; overflow-x: hidden; }
-  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--charcoal); min-height: 100vh; max-width: 100vw; overflow-x: hidden; }
+/* ── RESET ──────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--sand);
+  color: var(--charcoal);
+  min-height: 100vh;
+}
 
-  header { background: var(--sage-dark); color: white; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-md); }
-  .header-inner { max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-  .header-brand { display: flex; align-items: center; gap: 12px; }
-  .header-logo { width: 42px; height: 42px; background: var(--sage-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-  .header-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; line-height: 1.2; }
-  .header-subtitle { font-size: 0.78rem; opacity: 0.75; font-weight: 300; letter-spacing: 0.5px; text-transform: uppercase; }
-  .header-links { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-  .header-link { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 7px 16px; border-radius: 8px; font-size: 0.82rem; cursor: pointer; font-family: inherit; font-weight: 500; transition: background 0.2s; text-decoration: none; display: inline-block; }
-  .header-link:hover { background: rgba(255,255,255,0.25); }
+/* ── HEADER ─────────────────────────────────────────────────────── */
+header {
+  background: var(--primary);
+  color: white;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header-logo {
+  width: 38px; height: 38px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.header-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+}
+.header-text p {
+  font-size: 0.7rem;
+  opacity: 0.65;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+@media (max-width: 600px) {
+  .header-text p { display: none; }
+}
+.header-nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.header-nav-btn {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.4rem 0.85rem;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+.header-nav-btn:hover { background: rgba(255,255,255,0.25); transform: translateY(-1px); }
+.header-nav-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+@media (max-width: 600px) {
+  .header-nav { gap: 0.3rem; }
+  .header-nav-btn { font-size: 0.65rem; padding: 0.35rem 0.55rem; }
+}
 
-  .hero { background: linear-gradient(135deg, var(--sage-dark) 0%, var(--sage) 100%); color: white; padding: 48px 24px; text-align: center; }
-  .hero-inner { max-width: 700px; margin: 0 auto; }
-  .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
-  .hero p { font-size: 1.05rem; opacity: 0.88; line-height: 1.65; font-weight: 300; }
-  .hero-season { display: inline-block; background: var(--terra); color: white; padding: 5px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; margin-bottom: 16px; letter-spacing: 0.5px; text-transform: uppercase; }
+/* ── HERO ────────────────────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #3d7a3e 60%, #4a8f4c 100%);
+  color: white;
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+.hero-content { position: relative; max-width: 700px; margin: 0 auto; }
+.hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+.hero p {
+  font-size: 1rem;
+  opacity: 0.85;
+  max-width: 520px;
+  margin: 0 auto 1.75rem;
+  line-height: 1.6;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.hero-stat {
+  text-align: center;
+}
+.hero-stat strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  line-height: 1;
+}
+.hero-stat span {
+  font-size: 0.72rem;
+  opacity: 0.65;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
 
-  .main { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
-  .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--terra); margin-bottom: 6px; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--charcoal); margin-bottom: 24px; }
+/* ── MAIN CONTAINER ─────────────────────────────────────────────── */
+.container { max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem; }
 
-  .events-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; margin-bottom: 48px; }
-  .event-card { background: white; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow-sm); overflow: hidden; transition: all 0.2s; display: flex; flex-direction: column; }
-  .event-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--sage-light); }
-  .event-card-top { height: 6px; }
-  .color-egg { background: linear-gradient(90deg, #f9a8d4, #c084fc); }
-  .color-hunt { background: linear-gradient(90deg, #6ee7b7, #3b82f6); }
-  .color-garage { background: linear-gradient(90deg, #fbbf24, #f59e0b); }
-  .color-movie { background: linear-gradient(90deg, #93c5fd, #6366f1); }
-  .color-prep { background: linear-gradient(90deg, var(--sage-light), var(--sage)); }
-  .color-volunteer { background: linear-gradient(90deg, var(--terra-light), var(--terra)); }
-  .event-card-body { padding: 20px; flex: 1; }
-  .event-type-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--mid-gray); margin-bottom: 10px; }
-  .event-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
-  .event-meta { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
-  .event-meta-row { display: flex; align-items: flex-start; gap: 8px; font-size: 0.85rem; color: var(--mid-gray); }
-  .event-meta-icon { flex-shrink: 0; margin-top: 1px; }
-  .event-desc { font-size: 0.88rem; line-height: 1.6; color: var(--charcoal); }
-  .event-card-footer { padding: 14px 20px; background: var(--cream); border-top: 1px solid var(--border); display: flex; gap: 8px; flex-wrap: wrap; }
-  .btn-rsvp { background: var(--sage-dark); color: white; border: none; padding: 9px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.15s; flex: 1; text-align: center; }
-  .btn-rsvp:hover { background: #2d4a2d; }
-  .btn-volunteer { background: var(--terra); color: white; border: none; padding: 9px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.15s; flex: 1; text-align: center; }
-  .btn-volunteer:hover { background: #b05f3a; }
-  .btn-donate { background: white; color: var(--sage-dark); border: 2px solid var(--sage); padding: 8px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.15s; flex: 1; text-align: center; }
-  .btn-donate:hover { background: var(--sage-pale); }
+/* ── SECTION TITLE ──────────────────────────────────────────────── */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 0.35rem;
+}
+.section-sub {
+  font-size: 0.85rem;
+  color: var(--mid);
+  margin-bottom: 1.5rem;
+}
 
-  .loading-state { text-align: center; padding: 60px 20px; color: var(--mid-gray); grid-column: 1/-1; }
-  .spinner { width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: var(--sage); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .empty-state { text-align: center; padding: 60px 20px; color: var(--mid-gray); grid-column: 1/-1; }
-  .empty-icon { font-size: 3rem; margin-bottom: 16px; }
+/* ── TABS ────────────────────────────────────────────────────────── */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--sand-dark);
+  padding-bottom: 0;
+}
+.tab {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--mid);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+.tab:hover { color: var(--primary); }
+.tab.active { color: var(--primary); border-bottom-color: var(--primary); font-weight: 600; }
 
-  .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; display: flex; align-items: flex-end; justify-content: center; padding: 0; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
-  .overlay.open { opacity: 1; pointer-events: all; }
-  .modal { background: white; border-radius: var(--radius) var(--radius) 0 0; width: 100%; max-width: 560px; max-height: 92vh; overflow-y: auto; box-shadow: var(--shadow-lg); transform: translateY(30px); transition: transform 0.25s; }
-  .overlay.open .modal { transform: translateY(0); }
-  .modal-header { padding: 22px 24px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: white; z-index: 10; }
-  .modal-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; }
-  .modal-close { width: 32px; height: 32px; border: none; background: var(--light-gray); border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; color: var(--mid-gray); transition: background 0.15s; flex-shrink: 0; }
-  .modal-close:hover { background: var(--border); }
-  .modal-body { padding: 22px 24px; }
-  .modal-footer { padding: 16px 24px; border-top: 1px solid var(--border); display: flex; gap: 10px; justify-content: flex-end; position: sticky; bottom: 0; background: white; }
+/* ── VIEWS ───────────────────────────────────────────────────────── */
+.view { display: none; max-width: 100%; }
+.view.active { display: block; }
 
-  .form-group { margin-bottom: 18px; }
-  label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
-  .form-hint { font-size: 0.78rem; color: var(--mid-gray); margin-top: 4px; }
-  input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea, select { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; color: var(--charcoal); background: white; transition: border-color 0.15s; outline: none; -webkit-appearance: none; }
-  input:focus, textarea:focus, select:focus { border-color: var(--sage); }
-  textarea { resize: vertical; min-height: 80px; }
+/* ─── CALENDAR VIEW ─────────────────────────────────────────────── */
+.swipe-hint {
+  display: none;
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--light);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 640px) {
+  .swipe-hint { display: block; }
+}
+.calendar-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
+  border-radius: 10px;
+  /* subtle hint that it scrolls */
+  background:
+    linear-gradient(to right, white 30%, rgba(255,255,255,0)),
+    linear-gradient(to right, rgba(255,255,255,0), white 70%) 100% 0,
+    radial-gradient(farthest-side at 0 50%, rgba(0,0,0,0.08), transparent),
+    radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,0.08), transparent) 100% 0;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-size: 40px 100%, 40px 100%, 10px 100%, 10px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+.calendar-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  align-items: center;
+}
+.calendar-filters span {
+  font-size: 0.75rem;
+  color: var(--mid);
+  margin-right: 0.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.color-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: white;
+  color: var(--charcoal);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.color-chip .dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.color-chip.active { border-color: var(--charcoal); font-weight: 600; }
+.color-chip:hover { transform: translateY(-1px); box-shadow: 0 3px 8px rgba(0,0,0,0.12); }
 
-  .info-box { background: var(--sage-pale); border: 1px solid var(--sage-light); border-radius: 8px; padding: 12px 14px; font-size: 0.83rem; color: var(--sage-dark); margin-bottom: 18px; line-height: 1.55; }
-  .event-preview { background: var(--cream); border: 1px solid var(--border); border-radius: 8px; padding: 14px; margin-bottom: 18px; }
-  .event-preview h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 4px; }
-  .event-preview p { font-size: 0.82rem; color: var(--mid-gray); }
-  .donation-info { background: var(--sage-pale); border-radius: 10px; padding: 16px; margin-bottom: 18px; }
-  .donation-info h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 6px; color: var(--sage-dark); }
-  .donation-info p { font-size: 0.85rem; color: var(--sage-dark); line-height: 1.55; }
+.calendar-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+.calendar-table thead tr:first-child th {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: white;
+  padding: 0.5rem 0.25rem;
+  text-align: center;
+}
+.calendar-table thead tr:first-child th.season-winter { background: #4a7fa5; }
+.calendar-table thead tr:first-child th.season-spring { background: #5a8f3a; }
+.calendar-table thead tr:first-child th.season-summer { background: #c4622d; }
+.calendar-table thead tr:first-child th.season-fall   { background: #8a6a2a; }
+.calendar-table thead tr:last-child th {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.4rem 0.25rem;
+  text-align: center;
+  background: #f8f8f6;
+  color: var(--mid);
+  border-bottom: 2px solid var(--sand-dark);
+}
+.calendar-table thead tr:last-child th.plant-col {
+  text-align: left;
+  padding-left: 1rem;
+  min-width: 180px;
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  background: #f8f8f6;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.06);
+}
+.calendar-table tbody tr {
+  border-bottom: 1px solid #f0ede8;
+  transition: background 0.15s;
+  cursor: pointer;
+}
+.calendar-table tbody tr:hover { background: var(--sand); }
+.calendar-table tbody tr.hidden { display: none; }
+.calendar-table tbody td {
+  padding: 0.55rem 0.25rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.calendar-table tbody td.plant-name-cell {
+  text-align: left;
+  padding-left: 1rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  white-space: nowrap;
+  position: sticky;
+  left: 0;
+  background: white;
+  z-index: 2;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.06);
+}
+.plant-name-cell .color-dot {
+  display: inline-block;
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.bloom-block {
+  display: inline-block;
+  width: 85%;
+  height: 16px;
+  border-radius: 3px;
+  opacity: 0.85;
+}
+.calendar-legend {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--mid);
+  align-items: center;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.legend-swatch {
+  width: 22px; height: 12px;
+  border-radius: 3px;
+}
 
-  .btn-cancel { background: white; color: var(--mid-gray); border: 1.5px solid var(--border); padding: 10px 20px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; cursor: pointer; font-family: inherit; }
-  .btn-submit { background: var(--sage-dark); color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-  .btn-submit:hover { background: #2d4a2d; }
-  .btn-submit.terra { background: var(--terra); }
-  .btn-submit.terra:hover { background: #b05f3a; }
-  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+/* ─── COLOR VIEW ────────────────────────────────────────────────── */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+.color-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.color-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+.color-card-header {
+  padding: 0.9rem 1.1rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.color-card-body { padding: 1rem 1.1rem; }
+.color-plant-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.38rem 0;
+  border-bottom: 1px solid #f5f0ea;
+  font-size: 0.83rem;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.color-plant-item:last-child { border-bottom: none; }
+.color-plant-item:hover { color: var(--primary); }
+.color-plant-item .plant-link { font-weight: 500; }
+.color-plant-item .bloom-time { font-size: 0.72rem; color: var(--mid); }
 
-  .success-msg { text-align: center; padding: 24px 16px; }
-  .success-icon { font-size: 3rem; margin-bottom: 12px; }
-  .success-msg h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 8px; }
-  .success-msg p { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.6; }
+/* ─── PLANTS VIEW ───────────────────────────────────────────────── */
+.plant-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+.filter-btn {
+  padding: 0.4rem 1rem;
+  border: 1.5px solid var(--sand-dark);
+  background: white;
+  border-radius: 999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--mid);
+}
+.filter-btn:hover { border-color: var(--primary); color: var(--primary); }
+.filter-btn.active { background: var(--primary); border-color: var(--primary); color: white; }
 
-  footer { background: var(--sage-dark); color: rgba(255,255,255,0.7); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.6; margin-top: 48px; }
-  footer p { max-width: 700px; margin: 0 auto; }
-  footer a { color: var(--sage-light); }
-  footer strong { color: white; }
+.plants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+.plant-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.plant-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(0,0,0,0.12); }
+.plant-card.hidden { display: none; }
+.plant-photo {
+  height: 160px;
+  background: var(--sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.plant-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.plant-photo .photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--light);
+  font-size: 0.72rem;
+  text-align: center;
+}
+.plant-type-badge {
+  position: absolute;
+  top: 0.6rem; left: 0.6rem;
+  background: var(--primary);
+  color: white;
+  font-size: 0.62rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.plant-card-body { padding: 1rem; flex: 1; display: flex; flex-direction: column; }
+.plant-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--charcoal);
+  margin-bottom: 0.5rem;
+}
+.plant-card-specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+.spec-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--sand);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  color: var(--mid);
+}
+.color-swatch-inline {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1px solid rgba(0,0,0,0.15);
+}
+.plant-card-comment {
+  font-size: 0.76rem;
+  color: var(--mid);
+  line-height: 1.5;
+  flex: 1;
+}
+.plant-card-footer {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--sand-dark);
+}
+.btn-arc {
+  flex: 1;
+  padding: 0.5rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+.btn-arc:hover { background: #a8521f; }
+.btn-details {
+  padding: 0.5rem 0.75rem;
+  background: var(--primary-light);
+  color: var(--primary);
+  border: none;
+  border-radius: 5px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+.btn-details:hover { background: #d4e8d5; }
 
-  @media (max-width: 640px) {
-    .header-inner { padding: 12px 16px; }
-    .header-title { font-size: 1rem; }
-    .header-subtitle { display: none; }
-    .header-logo { width: 34px; height: 34px; font-size: 16px; }
-    .header-link { font-size: 0.75rem; padding: 6px 10px; }
-    .hero { padding: 32px 16px; }
-    .hero h1 { font-size: 1.7rem; }
-    .hero p { font-size: 0.95rem; }
-    .main { padding: 24px 16px; }
-    .events-grid { grid-template-columns: 1fr; gap: 16px; }
-    .event-card-footer { flex-direction: column; }
-    .btn-rsvp, .btn-volunteer, .btn-donate { width: 100%; }
-    .modal-header { padding: 18px 18px 14px; }
-    .modal-body { padding: 16px 18px; }
-    .modal-footer { padding: 14px 18px; flex-direction: column-reverse; }
-    .modal-footer .btn-submit, .modal-footer .btn-cancel { width: 100%; text-align: center; padding: 13px; }
-  }
+/* ── MODAL ───────────────────────────────────────────────────────── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  backdrop-filter: blur(3px);
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: white;
+  border-radius: 14px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  animation: modalIn 0.25s ease;
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.modal-photo {
+  height: 220px;
+  background: var(--sand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  position: relative;
+}
+.modal-photo img { width:100%; height:100%; object-fit:cover; }
+.modal-photo .photo-placeholder {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 0.5rem;
+  color: var(--light); font-size: 0.8rem;
+}
+.modal-close {
+  position: absolute;
+  top: 0.75rem; right: 0.75rem;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+  z-index: 10;
+}
+.modal-close:hover { background: rgba(0,0,0,0.65); }
+.modal-body { padding: 1.5rem; }
+.modal-type-badge {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.modal-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.modal-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+.modal-spec {
+  background: var(--sand);
+  border-radius: 6px;
+  padding: 0.6rem 0.75rem;
+}
+.modal-spec-label {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--light);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.modal-spec-value {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.modal-notes {
+  background: var(--primary-light);
+  border-left: 3px solid var(--primary);
+  padding: 0.75rem 1rem;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.84rem;
+  color: var(--charcoal);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+}
+.modal-notes strong {
+  display: block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+}
+.modal-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+.modal-btn-arc {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.2rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  justify-content: center;
+}
+.modal-btn-arc:hover { background: #a8521f; }
+.modal-btn-link {
+  padding: 0.75rem 1rem;
+  background: var(--primary-light);
+  color: var(--primary);
+  border: none;
+  border-radius: 7px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.modal-btn-link:hover { background: #d4e8d5; }
+
+/* ── BLOOM BUILDER ───────────────────────────────────────────────── */
+.builder-intro {
+  background: white;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--accent);
+  font-size: 0.88rem;
+  color: var(--mid);
+  line-height: 1.6;
+}
+.builder-intro strong { color: var(--charcoal); }
+.builder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  min-width: 0;
+}
+@media (max-width: 640px) {
+  .builder-grid { grid-template-columns: 1fr; }
+  .builder-result { grid-column: 1; }
+}
+.builder-panel {
+  background: white;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  min-width: 0;
+  overflow: hidden;
+}
+.builder-panel h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--sand-dark);
+}
+.builder-checklist { display: flex; flex-direction: column; gap: 0.4rem; }
+.builder-check {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.45rem 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-size: 0.82rem;
+}
+.builder-check:hover { background: var(--sand); }
+.builder-check input[type="checkbox"] { accent-color: var(--primary); width: 15px; height: 15px; }
+.builder-result {
+  background: white;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  grid-column: 1 / -1;
+  min-width: 0;
+  overflow: hidden;
+}
+.builder-result h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--sand-dark);
+}
+.result-calendar {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  background:
+    linear-gradient(to right, white 30%, rgba(255,255,255,0)),
+    linear-gradient(to right, rgba(255,255,255,0), white 70%) 100% 0,
+    radial-gradient(farthest-side at 0 50%, rgba(0,0,0,0.08), transparent),
+    radial-gradient(farthest-side at 100% 50%, rgba(0,0,0,0.08), transparent) 100% 0;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-size: 40px 100%, 40px 100%, 10px 100%, 10px 100%;
+  background-attachment: local, local, scroll, scroll;
+}
+.result-table {
+  width: max-content;
+  min-width: 600px;
+  border-collapse: collapse;
+}
+.result-table th {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--mid);
+  text-align: center;
+  padding: 0.3rem 0.2rem;
+  border-bottom: 2px solid var(--sand-dark);
+}
+.result-table th.name-col { text-align: left; padding-left: 0.5rem; min-width: 160px; }
+.result-table td {
+  padding: 0.35rem 0.2rem;
+  text-align: center;
+  border-bottom: 1px solid #f5f0ea;
+}
+.result-table td.name-col { text-align: left; padding-left: 0.5rem; font-size: 0.78rem; font-weight: 500; }
+.result-empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--light);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* ── HOA RULES BOX ───────────────────────────────────────────────── */
+.rules-box {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem 2rem;
+  margin-top: 2.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  border-top: 4px solid var(--accent);
+}
+.rules-box h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+.rules-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.6rem; }
+.rule-item {
+  display: flex;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--mid);
+  line-height: 1.5;
+}
+.rule-icon { color: var(--accent); flex-shrink: 0; font-size: 0.9rem; }
+
+/* ── FOOTER ─────────────────────────────────────────────────────── */
+footer {
+  background: var(--charcoal);
+  color: #999;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.75rem;
+  margin-top: 3rem;
+  line-height: 1.7;
+}
+footer a { color: #bbb; }
+
+/* ── PALETTE ─────────────────────────────────────────────────────── */
+.plant-card.in-palette {
+  box-shadow: 0 0 0 3px var(--primary), 0 8px 24px rgba(0,0,0,0.1);
+}
+.palette-chip {
+  position: absolute;
+  top: 0.5rem; right: 0.5rem;
+  background: white;
+  color: var(--primary);
+  border: 1.5px solid var(--primary);
+  border-radius: 999px;
+  font-size: 0.67rem;
+  font-weight: 700;
+  padding: 0.2rem 0.55rem;
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.15s;
+  letter-spacing: 0.02em;
+  display: flex; align-items: center; gap: 0.25rem;
+  white-space: nowrap;
+}
+.palette-chip:hover { transform: scale(1.05); }
+.palette-cb { display: none; }
+
+/* Floating palette bar */
+#paletteBar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  z-index: 150;
+  background: var(--primary);
+  color: white;
+  padding: 0.85rem 2rem;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.2);
+  animation: slideUp 0.25s ease;
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+.palette-bar-left {
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.palette-bar-count { font-weight: 600; font-size: 0.95rem; }
+.palette-bar-sub { font-size: 0.78rem; opacity: 0.7; }
+.palette-bar-actions { display: flex; gap: 0.65rem; align-items: center; }
+.btn-palette-clear {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: white; padding: 0.45rem 1rem;
+  border-radius: 5px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem; cursor: pointer;
+  transition: border-color 0.2s;
+}
+.btn-palette-clear:hover { border-color: white; }
+.btn-palette-submit {
+  background: var(--accent);
+  border: none; color: white;
+  padding: 0.55rem 1.4rem;
+  border-radius: 5px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; letter-spacing: 0.02em;
+  transition: background 0.2s;
+  display: inline-flex; align-items: center;
+}
+.btn-palette-submit:hover { background: #a8521f; }
+.btn-palette-portal {
+  background: #1e4220;
+  border: none; color: white;
+  padding: 0.55rem 1.4rem;
+  border-radius: 5px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; letter-spacing: 0.02em;
+  transition: background 0.2s;
+  display: inline-flex; align-items: center;
+  text-decoration: none;
+}
+.btn-palette-portal:hover { background: #163018; }
+
+.btn-arc-single {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 0.85rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+}
+.btn-arc-single:hover { background: #1e4220; }
+
+/* ── RESPONSIVE ─────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .header-inner { padding: 0 1rem; }
+  .hero { padding: 2.5rem 1rem 2rem; }
+  .container { padding: 1.5rem 1rem; }
+  .modal-specs { grid-template-columns: 1fr; }
+}
+
+/* ── BOARD VOTING ────────────────────────────────────────────────── */
+.vote-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--sand-dark);
+}
+.vote-section-title {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--light);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+.vote-tally {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.tally-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.tally-yes  { background: #e8f0e9; color: #2C5F2D; }
+.tally-no   { background: #fde8e8; color: #C4312D; }
+.tally-more { background: #fdf3e0; color: #8a6a2a; }
+.vote-name-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+  align-items: center;
+}
+.vote-name-input {
+  flex: 1;
+  padding: 0.45rem 0.75rem;
+  border: 1.5px solid var(--sand-dark);
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: var(--charcoal);
+  outline: none;
+}
+.vote-name-input:focus { border-color: var(--primary); }
+.vote-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+.btn-vote {
+  flex: 1;
+  padding: 0.55rem 0.5rem;
+  border: none;
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn-vote:hover { opacity: 0.85; transform: translateY(-1px); }
+.btn-vote:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+.btn-vote-yes  { background: #2C5F2D; color: white; }
+.btn-vote-no   { background: #C4312D; color: white; }
+.btn-vote-more { background: #8a6a2a; color: white; }
+.vote-feedback {
+  font-size: 0.78rem;
+  text-align: center;
+  padding: 0.4rem;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  display: none;
+}
+.vote-feedback.success { background: #e8f0e9; color: #2C5F2D; display: block; }
+.vote-feedback.error   { background: #fde8e8; color: #C4312D; display: block; }
 </style>
+<!-- pdf-lib for client-side PDF form filling -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 </head>
 <body>
 
+<!-- ── LOADING OVERLAY ─────────────────────────────────────────────── -->
+<div id="loadingOverlay" style="
+  display:flex;
+  position:fixed;inset:0;
+  background:rgba(245,240,232,0.96);
+  z-index:999;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:1rem;
+">
+  <div style="font-size:2.5rem;animation:spin 2s linear infinite">🌿</div>
+  <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#2C5F2D">Loading plants from Airtable…</div>
+</div>
+<style>
+@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+</style>
+
+
+<!-- ── HEADER ──────────────────────────────────────────────────────── -->
 <header>
   <div class="header-inner">
     <div class="header-brand">
-      <div class="header-logo">🏘️</div>
-      <div>
-        <div class="header-title">Dobson Terrace</div>
-        <div class="header-subtitle">Spring 2026 Events</div>
+      <div class="header-logo">🌵</div>
+      <div class="header-text">
+        <h1>Dobson Terrace HOA</h1>
+        <p>Powered by <strong>The Approved Garden</strong> · 2026</p>
       </div>
     </div>
-    <div class="header-links">
-      <a href="https://bridgetthart.github.io/approved-garden-dobson-terrace" target="_blank" class="header-link">🌿 Plant Guide</a>
-      <a href="https://script.google.com/macros/s/AKfycbxRwFca9Xoe9nY-FC7dpvM3lb0aemYdnC4eINNuSfNkzQDwShCsRyxyWN3jwVZty093/exec" target="_blank" class="header-link">🤝 Help Board</a>
-    </div>
+    <nav class="header-nav">
+      <a class="header-nav-btn" href="https://bit.ly/dobsonterraceevents" target="_blank">📅 Events</a>
+      <a class="header-nav-btn" href="https://bit.ly/dthelpboard" target="_blank">🤝 Help Board</a>
+      <a class="header-nav-btn active" href="https://bit.ly/DobsonTerracePlants" target="_blank">🌿 Plants</a>
+    </nav>
   </div>
 </header>
 
+<!-- ── HERO ────────────────────────────────────────────────────────── -->
 <div class="hero">
-  <div class="hero-inner">
-    <div class="hero-season">Spring 2026</div>
-    <h1>Something's Always Happening at Dobson Terrace</h1>
-    <p>Sign up for events, volunteer to help, or donate supplies. Everything you need to get involved is right here.</p>
-  </div>
-</div>
-
-<div class="main">
-  <div class="section-label">Upcoming</div>
-  <div class="section-title">Spring Events</div>
-  <div class="events-grid" id="eventsGrid">
-    <div class="loading-state"><div class="spinner"></div><p>Loading events…</p></div>
-  </div>
-</div>
-
-<!-- RSVP MODAL -->
-<div class="overlay" id="rsvpOverlay" onclick="closeOnOverlay(event,'rsvpOverlay')">
-  <div class="modal" onclick="event.stopPropagation()">
-    <div class="modal-header">
-      <div class="modal-title" id="rsvpModalTitle">RSVP</div>
-      <button class="modal-close" onclick="closeModal('rsvpOverlay')">✕</button>
+  <div class="hero-content">
+    <h2>Find the Right Plant<br>for Your Front Yard</h2>
+    <p>Browse by color, season, or category. Every plant here is approved for Dobson Terrace and designed to thrive in Chandler's desert climate.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong>30</strong><span>Approved Plants</span></div>
+      <div class="hero-stat"><strong>4</strong><span>Categories</span></div>
+      <div class="hero-stat"><strong>12</strong><span>Months of Color</span></div>
     </div>
-    <div class="modal-body" id="rsvpModalBody"></div>
-    <div class="modal-footer" id="rsvpModalFooter"></div>
   </div>
 </div>
 
-<!-- VOLUNTEER MODAL -->
-<div class="overlay" id="volunteerOverlay" onclick="closeOnOverlay(event,'volunteerOverlay')">
-  <div class="modal" onclick="event.stopPropagation()">
-    <div class="modal-header">
-      <div class="modal-title" id="volunteerModalTitle">Volunteer Sign-Up</div>
-      <button class="modal-close" onclick="closeModal('volunteerOverlay')">✕</button>
+<!-- ── MAIN ─────────────────────────────────────────────────────────── -->
+<div class="container">
+
+  <div class="tabs">
+    <button class="tab" onclick="showView('calendar', this)">🌸 Bloom Calendar</button>
+    <button class="tab" onclick="showView('colors', this)">🎨 Design by Color</button>
+    <button class="tab active" onclick="showView('plants', this)">🌿 All Plants</button>
+    <button class="tab" onclick="showView('builder', this)">✨ Build My Palette</button>
+    <button class="tab" id="boardTabBtn" onclick="showBoardLogin(this)" style="margin-left:auto">🔒 Board View</button>
+  </div>
+
+  <!-- ── CALENDAR VIEW ──────────────────────────────────────────── -->
+  <div id="view-calendar" class="view">
+    <h2 class="section-title">Year-Round Bloom Calendar</h2>
+    <p class="section-sub">Click a color to filter. Click any plant row to see details.</p>
+
+    <div class="calendar-filters">
+      <span>Filter by color:</span>
+      <button class="color-chip active" data-color="all" onclick="filterCalendar('all', this)">
+        <span class="dot" style="background:linear-gradient(135deg,#E8C832,#D4748C,#7B5EA7,#C4312D)"></span>
+        All Plants
+      </button>
+      <button class="color-chip" data-color="yellow" onclick="filterCalendar('yellow', this)">
+        <span class="dot" style="background:#E8C832"></span>Yellow
+      </button>
+      <button class="color-chip" data-color="orange" onclick="filterCalendar('orange', this)">
+        <span class="dot" style="background:#E8832A"></span>Orange
+      </button>
+      <button class="color-chip" data-color="red" onclick="filterCalendar('red', this)">
+        <span class="dot" style="background:#C4312D"></span>Red
+      </button>
+      <button class="color-chip" data-color="pink" onclick="filterCalendar('pink', this)">
+        <span class="dot" style="background:#D4748C"></span>Pink
+      </button>
+      <button class="color-chip" data-color="purple" onclick="filterCalendar('purple', this)">
+        <span class="dot" style="background:#7B5EA7"></span>Purple
+      </button>
+      <button class="color-chip" data-color="blue" onclick="filterCalendar('blue', this)">
+        <span class="dot" style="background:#4A7FA5"></span>Blue
+      </button>
+      <button class="color-chip" data-color="white" onclick="filterCalendar('white', this)">
+        <span class="dot" style="background:#DDD;border:1px solid #bbb"></span>White
+      </button>
+      <button class="color-chip" data-color="green" onclick="filterCalendar('green', this)">
+        <span class="dot" style="background:#4A7A4A"></span>Green
+      </button>
+      <button class="color-chip" data-color="multi" onclick="filterCalendar('multi', this)">
+        <span class="dot" style="background:linear-gradient(135deg,#E8C832 50%,#D4748C 50%)"></span>Multi
+      </button>
     </div>
-    <div class="modal-body" id="volunteerModalBody"></div>
-    <div class="modal-footer" id="volunteerModalFooter"></div>
-  </div>
-</div>
 
-<!-- DONATION MODAL -->
-<div class="overlay" id="donationOverlay" onclick="closeOnOverlay(event,'donationOverlay')">
-  <div class="modal" onclick="event.stopPropagation()">
-    <div class="modal-header">
-      <div class="modal-title">Donate Supplies</div>
-      <button class="modal-close" onclick="closeModal('donationOverlay')">✕</button>
+    <p class="swipe-hint">← swipe to see all months →</p>
+    <div class="calendar-wrap">
+      <table class="calendar-table" id="bloomTable">
+        <thead>
+          <tr>
+            <th class="plant-col" rowspan="2" style="background:#f8f8f6;color:#666;text-align:left;padding-left:1rem;font-size:0.7rem;letter-spacing:0.08em;position:sticky;left:0;z-index:3;box-shadow:2px 0 4px rgba(0,0,0,0.06)">PLANT</th>
+            <th class="season-winter" colspan="2">❄ Winter</th>
+            <th class="season-spring" colspan="3">🌸 Spring</th>
+            <th class="season-summer" colspan="4">☀ Summer</th>
+            <th class="season-fall" colspan="2">🍂 Fall</th>
+            <th class="season-winter" colspan="1">❄</th>
+          </tr>
+          <tr>
+            <th>Jan</th><th>Feb</th>
+            <th>Mar</th><th>Apr</th><th>May</th>
+            <th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th>
+            <th>Oct</th><th>Nov</th>
+            <th>Dec</th>
+          </tr>
+        </thead>
+        <tbody id="calendarBody"></tbody>
+      </table>
     </div>
-    <div class="modal-body" id="donationModalBody"></div>
-    <div class="modal-footer" id="donationModalFooter"></div>
+    <div class="calendar-legend" id="calLegend"></div>
+  </div>
+
+  <!-- ── COLORS VIEW ────────────────────────────────────────────── -->
+  <div id="view-colors" class="view">
+    <h2 class="section-title">Design by Color</h2>
+    <p class="section-sub">Choose your color palette, then pick the plants that produce it. Click any plant to see details.</p>
+    <div class="color-grid" id="colorGrid"></div>
+  </div>
+
+  <!-- ── PLANTS VIEW ────────────────────────────────────────────── -->
+  <div id="view-plants" class="view active">
+    <h2 class="section-title">All Approved Plants</h2>
+    <p class="section-sub">Click any plant for full details and to submit a planting request.</p>
+    <div class="plant-filters">
+      <span style="font-size:0.75rem;color:var(--mid);font-weight:500;text-transform:uppercase;letter-spacing:0.05em;margin-right:0.25rem">Filter:</span>
+      <button class="filter-btn active" onclick="filterPlants('All', this)">All</button>
+      <button class="filter-btn" onclick="filterPlants('Tree', this)">🌳 Trees</button>
+      <button class="filter-btn" onclick="filterPlants('Agave', this)">🌵 Agaves</button>
+      <button class="filter-btn" onclick="filterPlants('Shrub', this)">🌸 Shrubs</button>
+      <button class="filter-btn" onclick="filterPlants('Succulent', this)">🪴 Succulents</button>
+      <button class="filter-btn" onclick="filterPlants('Vine', this)">🌿 Vines</button>
+      <button class="filter-btn" onclick="filterPlants('Ground Cover', this)">☘️ Ground Cover</button>
+    </div>
+    <div class="plants-grid" id="plantsGrid"></div>
+  </div>
+
+  <!-- ── BUILDER VIEW ───────────────────────────────────────────── -->
+  <div id="view-builder" class="view">
+    <h2 class="section-title">Build My Palette</h2>
+    <p class="section-sub">Select the plants you're considering and see what your yard's color calendar would look like.</p>
+    <div class="builder-intro">
+      <strong>How it works:</strong> Check the plants you're interested in on the left. The calendar on the right updates to show your combined bloom timeline — so you can see if you'll have color in every month, or spot gaps to fill.
+    </div>
+    <div class="builder-grid">
+      <div class="builder-panel">
+        <h3>Choose Your Plants</h3>
+        <div class="builder-checklist" id="builderChecklist"></div>
+      </div>
+      <div class="builder-panel">
+        <h3>Quick Facts</h3>
+        <div id="builderFacts" style="font-size:0.82rem;color:var(--mid);line-height:1.8">
+          <p>Select plants on the left to see your selection summary here.</p>
+        </div>
+      </div>
+      <div class="builder-result">
+        <h3>Your Yard's Bloom Calendar</h3>
+        <p class="swipe-hint">← swipe to see all months →</p>
+        <div class="result-calendar">
+          <table class="result-table">
+            <thead>
+              <tr>
+                <th class="name-col">Plant</th>
+                <th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th>
+                <th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th>
+              </tr>
+            </thead>
+            <tbody id="builderCalBody">
+              <tr><td colspan="13" class="result-empty">Select plants above to build your calendar</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HOA RULES ──────────────────────────────────────────────── -->
+  <div class="rules-box">
+    <h3>📋 Before You Plant — HOA Guidelines</h3>
+    <div class="rules-list">
+      <div class="rule-item"><span class="rule-icon">✅</span><span>Submit an <strong>Architectural Request</strong> before planting so irrigation can be arranged.</span></div>
+      <div class="rule-item"><span class="rule-icon">🚫</span><span><strong>Trees cannot be planted in grass areas.</strong> Rock areas only.</span></div>
+      <div class="rule-item"><span class="rule-icon">🚫</span><span><strong>No Palms or Aloes</strong> will be approved in front yards.</span></div>
+      <div class="rule-item"><span class="rule-icon">💧</span><span>The HOA <strong>maintains the irrigation system</strong> and will connect approved plants.</span></div>
+      <div class="rule-item"><span class="rule-icon">🌱</span><span>Want a plant not on this list? <strong>Submit a request</strong> to the Board for review.</span></div>
+      <div class="rule-item"><span class="rule-icon">📞</span><span>Questions? Call your community manager at <strong>(480) 422-0888</strong> or <a href="https://portal.trestlemanagement.com/login" target="_blank">log into the portal</a> to send an inquiry.</span></div>
+    </div>
+  </div>
+
+
+  <!-- ── BOARD VIEW ───────────────────────────────────────────── -->
+  <div id="view-board" class="view">
+    <h2 class="section-title">Board Review — Staged Plants</h2>
+    <p class="section-sub">These plants are pending board approval. Visible to board members only.</p>
+    <div class="plants-grid" id="boardGrid"></div>
+    <p id="boardEmpty" style="color:var(--light);font-style:italic;font-size:0.9rem;display:none">No plants currently staged for review.</p>
+  </div>
+
+
+</div>
+
+<!-- ── PALETTE BAR ──────────────────────────────────────────────────── -->
+<div id="paletteBar">
+  <div class="palette-bar-left">
+    <span style="font-size:1.2rem">🌿</span>
+    <span class="palette-bar-count" id="paletteCount">0 plants in your palette</span>
+    <span class="palette-bar-sub">— ready to request approval</span>
+  </div>
+  <div class="palette-bar-actions">
+    <button class="btn-palette-clear" onclick="palette.clear();updatePaletteUI()">Clear All</button>
+    <button class="btn-palette-submit" onclick="downloadARCForm()">📄 Download ARC Form →</button>
+    <a class="btn-palette-portal" href="https://portal.trestlemanagement.com/community/new-request" target="_blank">📋 Go to Portal →</a>
   </div>
 </div>
 
+<!-- ── MODAL ────────────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <div class="modal-photo" id="modalPhoto">
+      <div class="photo-placeholder">
+        <span style="font-size:3rem">🌿</span>
+        <span>Photo coming soon</span>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-type-badge" id="modalType">Shrub</div>
+      <div class="modal-name" id="modalName">Plant Name</div>
+      <div class="modal-specs" id="modalSpecs"></div>
+      <div class="modal-notes" id="modalNotes"></div>
+      <div class="modal-actions">
+        <button class="modal-btn-arc" id="modalArcBtn" onclick="downloadARCForm(document.getElementById('modal').dataset.plantId)">📄 Download ARC Form</button>
+        <a class="modal-btn-link" id="modalLink" href="#" target="_blank">View ↗</a>
+      </div>
+      <div class="vote-section" id="voteSection" style="display:none">
+        <div class="vote-section-title">Board Vote</div>
+        <div class="vote-tally" id="voteTally"></div>
+        <div class="vote-name-row">
+          <input type="text" class="vote-name-input" id="voterName" placeholder="Your first name" maxlength="30" />
+        </div>
+        <div class="vote-buttons">
+          <button class="btn-vote btn-vote-yes"  onclick="submitVote('Yes')">✅ Yes</button>
+          <button class="btn-vote btn-vote-no"   onclick="submitVote('No')">❌ No</button>
+          <button class="btn-vote btn-vote-more" onclick="submitVote('More Info')">🤔 More Info</button>
+        </div>
+        <div class="vote-feedback" id="voteFeedback"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ───────────────────────────────────────────────────────── -->
 <footer>
-  <p>
-    <strong>⭐ Dobson Terrace Neighborhood Events</strong><br>
-    These events are community-organized and not official programs of Dobson Terrace HOA or Trestle Property Management.
-    Questions? Contact <a href="mailto:bridgettrhart@gmail.com">bridgettrhart@gmail.com</a>
-  </p>
+  <p>Dobson Terrace HOA · Approved Plant Guide 2026 · Updated January 2026</p>
+  <p>Questions? <a href="/cdn-cgi/l/email-protection#4b22252d240b3f392e383f272e262a252a2c2e262e253f65282426"><span class="__cf_email__" data-cfemail="6801060e07281c1a0d1b1c040d050906090f0d050d061c460b0705">[email&#160;protected]</span></a> · (480) 422-0888 · <a href="https://portal.trestlemanagement.com" target="_blank">portal.trestlemanagement.com</a></p>
 </footer>
 
 <script>
-const PROXY = 'https://airtable-proxy.bridgettrhart.workers.dev';
-const BASE  = 'appqnxeicJxL0v18h';
+// ══════════════════════════════════════════════════════════════════
+// AIRTABLE CONFIG
+// ══════════════════════════════════════════════════════════════════
+const PROXY_BASE       = "https://airtable-proxy.bridgettrhart.workers.dev/app9CPgEWHf2uaT7e";
+const COMMUNITY_SLUG   = "Dobson Terrace";
+const BOARD_PIN        = "2442";
 
-let allEvents = [];
-let currentEventId = null;
-
-const EVENT_CONFIG = {
-  event:           { label: 'Community Event',    icon: '🎉' },
-  prep_meeting:    { label: 'Prep & Volunteers',  icon: '🛠️' },
-  volunteer_shift: { label: 'Volunteer Shift',    icon: '🙋' },
+// Community data — populated at load time from Airtable
+const COMMUNITY = {
+  name: "Dobson Terrace HOA",
+  portalUrl: "https://portal.trestlemanagement.com",
+  arcEmail: "info@trestlemanagement.com",
+  phone: "(480) 422-0888",
+  arcSubjectPrefix: "Architectural Request - Plant: "
 };
 
-function getColorClass(e) {
-  const name = (e.event_name || '').toLowerCase();
-  if (name.includes('egg') && name.includes('hunt')) return 'color-hunt';
-  if (name.includes('stuff') || name.includes('volunteer')) return 'color-volunteer';
-  if (name.includes('garage') || name.includes('sale')) return 'color-garage';
-  if (name.includes('movie')) return 'color-movie';
-  if (name.includes('easter') || name.includes('egg')) return 'color-egg';
-  return 'color-prep';
-}
+// ARC PDF URL — fetched from Communities table at load time
+let ARC_PDF_URL = null;
 
-window.addEventListener('DOMContentLoaded', loadEvents);
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+let PLANTS = [];
+let STAGED_PLANTS = [];
 
-async function airtable(path, method = 'GET', body = null) {
-  const opts = { method, headers: { 'Content-Type': 'application/json' } };
-  if (body) opts.body = JSON.stringify(body);
-  const res = await fetch(`${PROXY}/${BASE}/${path}`, opts);
+// ══════════════════════════════════════════════════════════════════
+// AIRTABLE HELPERS
+// ══════════════════════════════════════════════════════════════════
+async function airtableFetch(table, params, options) {
+  params = params || '';
+  options = options || {};
+  const url = PROXY_BASE + '/' + encodeURIComponent(table) + params;
+  const fetchOptions = { headers: { 'Content-Type': 'application/json' } };
+  if (options.method) {
+    fetchOptions.method = options.method;
+    if (options.body) fetchOptions.body = JSON.stringify(options.body);
+  }
+  const res = await fetch(url, fetchOptions);
+  if (!res.ok) throw new Error('Proxy error: ' + res.status);
   return res.json();
 }
 
-async function airtablePost(table, fields) {
-  return airtable(table, 'POST', { records: [{ fields }] });
+function seasonToMonths(seasons) {
+  if (!seasons || !seasons.length) return [];
+  const map = { Spring:[2,3,4], Summer:[5,6,7], Fall:[8,9,10], Winter:[11,0,1], 'Year-Round':[0,1,2,3,4,5,6,7,8,9,10,11] };
+  const months = new Set();
+  seasons.forEach(function(s){ (map[s]||[]).forEach(function(m){ months.add(m); }); });
+  return Array.from(months).sort(function(a,b){ return a-b; });
 }
 
-async function loadEvents() {
+function colorsToKeys(colors) {
+  // Returns an array of all matching color keys for this plant
+  if (!colors || !colors.length) return [];
+  const keySet = new Set();
+  colors.forEach(function(col) {
+    const c = col.toLowerCase();
+    if (c==='white'||c==='cream')        keySet.add('white');
+    else if (c==='yellow'||c==='gold')   keySet.add('yellow');
+    else if (c==='orange')               keySet.add('orange');
+    else if (c==='red')                  keySet.add('red');
+    else if (c==='pink'||c==='magenta')  keySet.add('pink');
+    else if (c==='purple'||c==='lavender')keySet.add('purple');
+    else if (c==='blue')                 keySet.add('blue');
+    else if (c==='green')                keySet.add('green');
+  });
+  if (colors.length > 1) keySet.add('multi');
+  return Array.from(keySet);
+}
+// Primary color: multi if multiple colors, otherwise first key
+function colorsToKey(colors) {
+  const keys = colorsToKeys(colors);
+  if (!keys.length) return null;
+  if (colors && colors.length > 1) return 'multi';
+  return keys[0];
+}
+
+function parseAirtablePlant(rec) {
+  const f = rec.fields;
+  const bloomColors  = f['Bloom Color']  || [];
+  const bloomSeasons = f['Bloom Season'] || [];
+  const photoAtt     = f['Photo'];
+  const photoUrl     = photoAtt && photoAtt.length ? photoAtt[0].url : null;
+  const slug = f['Slug'] || (f['Plant Name']||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+  return {
+    id:          rec.id,
+    name:        f['Plant Name']       || '',
+    type:        f['Plant Type']       || 'Shrub',
+    color:       bloomColors.join(', ')|| '—',
+    colorKeys:   colorsToKeys(bloomColors),
+    colorKey:    colorsToKey(bloomColors),
+    blooms:      bloomSeasons.join(', ')|| null,
+    bloomMonths: seasonToMonths(bloomSeasons),
+    sun:         f['Sun Requirements'] || '—',
+    water:       f['Water Needs']      || '—',
+    size:        f['Mature Size']      || '—',
+    comments:    f['Care Notes'] || f['Notes'] || f['Description'] || '',
+    url:         f['Nursery Buy URL']  || null,
+    photo:       photoUrl || (slug + '.jpg'),
+  };
+}
+
+async function fetchPlantsByIds(ids) {
+  if (!ids.length) return [];
+  const results = [];
+  for (let i = 0; i < ids.length; i += 10) {
+    const batch = ids.slice(i, i+10);
+    const formula = 'OR(' + batch.map(function(id){ return 'RECORD_ID()="'+id+'"'; }).join(',') + ')';
+    const data = await airtableFetch('Plants', '?filterByFormula=' + encodeURIComponent(formula));
+    results.push.apply(results, data.records || []);
+  }
+  return results;
+}
+
+// ══════════════════════════════════════════════════════════════════
+// MAIN LOADER
+// ══════════════════════════════════════════════════════════════════
+async function loadFromAirtable() {
+  showLoadingState();
   try {
-    const data = await airtable('events?sort%5B0%5D%5Bfield%5D=date&sort%5B0%5D%5Bdirection%5D=asc');
-    allEvents = (data.records || []).map(r => ({ id: r.id, ...r.fields }));
-    renderEvents();
-  } catch(e) {
-    document.getElementById('eventsGrid').innerHTML =
-      `<div class="empty-state"><div class="empty-icon">⚠️</div><p>Could not load events. Please refresh.</p></div>`;
+    // 1. Fetch community record
+    const commData = await airtableFetch('Communities',
+      '?filterByFormula=' + encodeURIComponent('{Community Name}="' + COMMUNITY_SLUG + '"'));
+    const commRecord = commData.records && commData.records[0];
+    if (!commRecord) throw new Error('Community record not found');
+    const commId = commRecord.id;
+
+    // Grab ARC PDF URL from attachment field
+    const arcAtt = commRecord.fields['ARC Form PDF'];
+    if (arcAtt && arcAtt.length) ARC_PDF_URL = arcAtt[0].url;
+
+    // 2. Fetch Community Plants (Approved + Staged)
+    // Fetch all Community Plants records and filter in JS
+    // (Airtable linked-record formulas are unreliable in filter params)
+    let cpRecords = [], offset = null;
+    do {
+      const params = '?view=Grid+view' + (offset ? '&offset=' + offset : '');
+      const cpData = await airtableFetch('Community Plants', params);
+      cpRecords = cpRecords.concat(cpData.records || []);
+      offset = cpData.offset || null;
+    } while (offset);
+
+    // Filter in JS: only records linked to this community with the right status
+    cpRecords = cpRecords.filter(function(cp) {
+      const linked = cp.fields['Communities'] || [];
+      const status = cp.fields['Status'];
+      return linked.indexOf(commId) !== -1 &&
+             (status === 'Approved' || status === 'Staged');
+    });
+
+    if (!cpRecords.length) throw new Error('No plants found for this community');
+
+    // 3. Split by status
+    const approvedIds = [], stagedIds = [];
+    cpRecords.forEach(function(cp) {
+      const linked = cp.fields['Plants'] || [];
+      const status = cp.fields['Status'];
+      linked.forEach(function(pid) {
+        if (status === 'Approved') approvedIds.push(pid);
+        else if (status === 'Staged') stagedIds.push(pid);
+      });
+    });
+
+    // 4. Fetch plant records
+    const results = await Promise.all([fetchPlantsByIds(approvedIds), fetchPlantsByIds(stagedIds)]);
+    PLANTS        = results[0].map(parseAirtablePlant);
+    STAGED_PLANTS = results[1].map(parseAirtablePlant);
+
+    // 5. Update hero count
+    const heroCount = document.querySelector('.hero-stat strong');
+    if (heroCount) heroCount.textContent = PLANTS.length;
+
+    hideLoadingState();
+    buildCalendar();
+    buildColorView();
+    buildPlantsView();
+    buildBuilderView();
+
+  } catch(err) {
+    console.error('Airtable load error:', err);
+    showErrorState();
   }
 }
 
-function renderEvents() {
-  const grid = document.getElementById('eventsGrid');
-  const now = new Date(Date.now() - 86400000);
-  const upcoming = allEvents.filter(e => new Date(e.date) >= now);
+function showLoadingState() {
+  document.getElementById('loadingOverlay').style.display = 'flex';
+}
+function hideLoadingState() {
+  document.getElementById('loadingOverlay').style.display = 'none';
+}
+function showErrorState() {
+  const el = document.getElementById('loadingOverlay');
+  el.innerHTML = '<div style="text-align:center;padding:2rem;max-width:380px"><div style="font-size:2.5rem;margin-bottom:1rem">🌵</div><div style="font-family:\'Playfair Display\',serif;font-size:1.2rem;color:var(--primary);margin-bottom:0.75rem">Having trouble loading plants</div><div style="font-size:0.85rem;color:var(--mid);margin-bottom:1.5rem">Please check your connection and try again.</div><button onclick="location.reload()" style="background:var(--accent);color:white;border:none;padding:0.6rem 1.5rem;border-radius:5px;font-family:\'DM Sans\',sans-serif;font-size:0.85rem;font-weight:600;cursor:pointer">&#8635; Retry</button></div>';
+  el.style.display = 'flex';
+}
 
-  if (!upcoming.length) {
-    grid.innerHTML = `<div class="empty-state"><div class="empty-icon">🌱</div><p>No upcoming events right now. Check back soon!</p></div>`;
-    return;
+
+// Color definitions
+const COLORS = {
+  yellow: { hex: "#E8C832", label: "Yellow",      emoji: "🌼" },
+  orange: { hex: "#E8832A", label: "Orange",      emoji: "🟠" },
+  red:    { hex: "#C4312D", label: "Red",         emoji: "🔴" },
+  pink:   { hex: "#D4748C", label: "Pink",        emoji: "🌸" },
+  purple: { hex: "#7B5EA7", label: "Purple",      emoji: "💜" },
+  blue:   { hex: "#4A7FA5", label: "Blue",        emoji: "🔵" },
+  white:  { hex: "#E0DDD8", label: "White",       emoji: "🤍" },
+  green:  { hex: "#4A7A4A", label: "Green",       emoji: "🌿" },
+  multi:  { hex: "#A8BB8A", label: "Multi-Color", emoji: "🌈" },
+};
+
+
+
+// ── PALETTE STATE ────────────────────────────────────────────────────────────
+const palette = new Set();
+
+function togglePalette(id, e) {
+  if (e) { e.stopPropagation(); e.preventDefault(); }
+  palette.has(id) ? palette.delete(id) : palette.add(id);
+  updatePaletteUI();
+}
+
+function updatePaletteUI() {
+  document.querySelectorAll('[data-palette-id]').forEach(el => {
+    const id = el.dataset.paletteId;
+    const active = palette.has(id);
+    el.classList.toggle('in-palette', active);
+    const cb = el.querySelector('.palette-cb');
+    if (cb) cb.checked = active;
+    const lbl = el.querySelector('.palette-chip');
+    if (lbl) lbl.textContent = active ? '✓ In Palette' : '+ Palette';
+    if (lbl) lbl.style.background = active ? '#2C5F2D' : 'white';
+    if (lbl) lbl.style.color = active ? 'white' : '#2C5F2D';
+  });
+  // sync modal palette chip if open
+  const modalId = document.getElementById('modal').dataset.plantId || '';
+  if (modalId) {
+    const chip = document.getElementById('modalPaletteChip');
+    if (chip) {
+      const active = palette.has(modalId);
+      chip.textContent = active ? '✓ In Palette' : '+ Palette';
+      chip.style.background = active ? '#2C5F2D' : 'white';
+      chip.style.color = active ? 'white' : '#2C5F2D';
+    }
   }
+  const bar = document.getElementById('paletteBar');
+  if (!bar) return;
+  bar.style.display = palette.size > 0 ? 'flex' : 'none';
+  document.getElementById('paletteCount').textContent =
+    palette.size === 1 ? '1 plant in your palette' : `${palette.size} plants in your palette`;
 
-  grid.innerHTML = upcoming.map(e => {
-    const cfg = EVENT_CONFIG[e.event_type] || EVENT_CONFIG.event;
-    const colorClass = getColorClass(e);
-    const buttons = [];
-    if (e.accepts_rsvp)       buttons.push(`<button class="btn-rsvp" onclick="openRsvp('${e.id}')">📋 RSVP</button>`);
-    if (e.accepts_volunteers)  buttons.push(`<button class="btn-volunteer" onclick="openVolunteer('${e.id}')">🙋 Volunteer</button>`);
-    if (e.accepts_donations)   buttons.push(`<button class="btn-donate" onclick="openDonation('${e.id}')">🎁 Donate</button>`);
+  // keep builder checkboxes in sync if that view has been rendered
+  const checklist = document.getElementById('builderChecklist');
+  if (checklist && checklist.children.length) updateBuilder();
+}
 
-    return `<div class="event-card">
-      <div class="event-card-top ${colorClass}"></div>
-      <div class="event-card-body">
-        <div class="event-type-tag">${cfg.icon} ${cfg.label}</div>
-        <div class="event-name">${esc(e.event_name)}</div>
-        <div class="event-meta">
-          <div class="event-meta-row"><span class="event-meta-icon">📅</span><span>${fmtDate(e.date)} at ${fmtTime(e.date)}</span></div>
-          <div class="event-meta-row"><span class="event-meta-icon">📍</span><span>${esc(e.location || 'TBD')}</span></div>
-        </div>
-        <div class="event-desc">${esc(e.description || '')}</div>
+function submitPaletteARC() {
+  const selected = PLANTS.filter(p => palette.has(p.id));
+  if (!selected.length) return;
+  const list = selected.map(p => `  • ${p.name} (${p.type})`).join('\n');
+  const subject = encodeURIComponent('Architectural Request — Plant Palette');
+  const body = encodeURIComponent(
+    `Hello,\n\nI would like to submit an Architectural Request for the following plants:\n\n${list}\n\nMy address: \nPreferred planting area: \nAdditional notes: \n\nPlease confirm receipt and next steps.\n\nThank you.`
+  );
+  window.open(`mailto:${COMMUNITY.arcEmail}?subject=${subject}&body=${body}`, '_blank');
+}
+
+// ══════════════════════════════════════════════════════════════════
+// VIEW SWITCHING
+// ══════════════════════════════════════════════════════════════════
+function showView(id, btn) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('view-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ══════════════════════════════════════════════════════════════════
+// CALENDAR VIEW
+// ══════════════════════════════════════════════════════════════════
+function buildCalendar() {
+  const tbody = document.getElementById('calendarBody');
+  const bloomers = PLANTS.filter(p => p.bloomMonths && p.bloomMonths.length > 0);
+  tbody.innerHTML = bloomers.map(p => {
+    const dotColor = p.colorKey ? COLORS[p.colorKey].hex : '#aaa';
+    const cells = MONTHS.map((m, mi) =>
+      p.bloomMonths.includes(mi)
+        ? `<td><span class="bloom-block" style="background:${dotColor}"></span></td>`
+        : `<td></td>`
+    ).join('');
+    const isGreenOnlyRow = (p.colorKeys||[]).length === 1 && p.colorKeys[0] === 'green';
+    return `<tr data-colorkeys="${(p.colorKeys||[]).join(',')||'none'}" data-primarycolor="${p.colorKey ? COLORS[p.colorKey].hex : '#aaa'}" class="${isGreenOnlyRow ? 'hidden' : ''}" onclick="openModal('${p.id}')">
+      <td class="plant-name-cell">
+        <span class="color-dot" style="background:${dotColor}"></span>${p.name}
+      </td>${cells}
+    </tr>`;
+  }).join('');
+
+  // Legend
+  const legend = document.getElementById('calLegend');
+  legend.innerHTML = Object.entries(COLORS).map(([key, c]) =>
+    `<div class="legend-item"><span class="legend-swatch" style="background:${c.hex}"></span>${c.label}</div>`
+  ).join('');
+}
+
+function filterCalendar(color, btn) {
+  document.querySelectorAll('.color-chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#calendarBody tr').forEach(row => {
+    const keys = (row.dataset.colorkeys || '').split(',');
+    const primaryColor = row.dataset.primarycolor;
+    const isGreenOnly = keys.length === 1 && keys[0] === 'green';
+    // Green-only plants hidden from 'all' view, shown only when green filter active
+    const match = color === 'green'
+      ? keys.indexOf('green') !== -1
+      : color === 'all'
+        ? !isGreenOnly
+        : keys.indexOf(color) !== -1;
+    row.classList.toggle('hidden', !match);
+    // Recolor bloom bars to match active filter color
+    const displayColor = (color !== 'all' && COLORS[color]) ? COLORS[color].hex : row.dataset.primarycolor;
+    row.querySelectorAll('.bloom-block').forEach(function(block) {
+      block.style.background = displayColor;
+    });
+    // Recolor the plant name dot
+    const dot = row.querySelector('.color-dot');
+    if (dot) dot.style.background = displayColor;
+  });
+}
+
+// ══════════════════════════════════════════════════════════════════
+// COLOR VIEW
+// ══════════════════════════════════════════════════════════════════
+function buildColorView() {
+  const grid = document.getElementById('colorGrid');
+  grid.innerHTML = Object.entries(COLORS).map(([key, c]) => {
+    const matching = PLANTS.filter(p => p.colorKeys && p.colorKeys.indexOf(key) !== -1);
+    if (!matching.length) return '';
+    const rows = matching.map(p =>
+      `<div class="color-plant-item" onclick="openModal('${p.id}')">
+        <span class="plant-link">${p.name}</span>
+        <span class="bloom-time">${p.blooms || '—'}</span>
+      </div>`
+    ).join('');
+    return `<div class="color-card">
+      <div class="color-card-header" style="background:${c.hex};${key==='white'?'color:#444':''}">
+        ${c.emoji} ${c.label}
       </div>
-      ${buttons.length ? `<div class="event-card-footer">${buttons.join('')}</div>` : ''}
+      <div class="color-card-body">${rows}</div>
     </div>`;
   }).join('');
 }
 
-// ─── RSVP ────────────────────────────────────────────────────
-function openRsvp(id) {
-  const e = allEvents.find(x => x.id === id);
-  if (!e) return;
-  currentEventId = id;
-  const isEaster = e.event_name.toLowerCase().includes('egg hunt');
-  const isGarage = e.event_name.toLowerCase().includes('garage');
+// ══════════════════════════════════════════════════════════════════
+// PLANTS VIEW
+// ══════════════════════════════════════════════════════════════════
+function buildPlantsView() {
+  const TYPE_ORDER = ['Tree', 'Agave', 'Shrub', 'Succulent', 'Vine', 'Ground Cover'];
+  const sorted = PLANTS.slice().sort(function(a, b) {
+    const ti = TYPE_ORDER.indexOf(a.type) - TYPE_ORDER.indexOf(b.type);
+    if (ti !== 0) return ti;
+    return a.name.localeCompare(b.name);
+  });
+  const grid = document.getElementById('plantsGrid');
+  grid.innerHTML = sorted.map(p => {
+    const dotColor = p.colorKey ? COLORS[p.colorKey].hex : '#ccc';
+    const colorPill = p.colorKey
+      ? `<span class="spec-pill"><span class="color-swatch-inline" style="background:${dotColor}"></span>${p.color}</span>`
+      : '';
+    return `<div class="plant-card" data-type="${p.type}" data-palette-id="${p.id}" onclick="openModal('${p.id}')">
+      <div class="plant-photo" style="position:relative">
+        <img src="${p.photo}" alt="${p.name}"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <div class="photo-placeholder" style="display:none">
+          <span>🌿</span><span style="font-size:0.65rem">Photo coming soon</span>
+        </div>
+        <span class="plant-type-badge">${p.type}</span>
+        <span class="palette-chip" onclick="event.stopPropagation();togglePalette('${p.id}',event)">
+          <input type="checkbox" class="palette-cb" />+ Palette
+        </span>
+      </div>
+      <div class="plant-card-body">
+        <div class="plant-card-name">${p.name}</div>
+        <div class="plant-card-specs">
+          <span class="spec-pill">📐 ${p.size}</span>
+          <span class="spec-pill">☀️ ${p.sun}</span>
+          <span class="spec-pill">💧 ${p.water}</span>
+          ${colorPill}
+        </div>
+        <div class="plant-card-comment">${p.comments}</div>
+        <div class="plant-card-footer">
+          <button class="btn-arc-single" onclick="event.stopPropagation();downloadARCForm('${p.id}')">📄 Download ARC Form</button>
+          <a class="btn-details" href="${p.url}" target="_blank" onclick="event.stopPropagation()">🔗</a>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
 
-  document.getElementById('rsvpModalTitle').textContent = `RSVP — ${e.event_name}`;
-  document.getElementById('rsvpModalBody').innerHTML = `
-    <div class="event-preview">
-      <h4>${esc(e.event_name)}</h4>
-      <p>📅 ${fmtDate(e.date)} at ${fmtTime(e.date)} &nbsp;|&nbsp; 📍 ${esc(e.location||'TBD')}</p>
+function filterPlants(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.plant-card').forEach(card => {
+    card.classList.toggle('hidden', type !== 'All' && card.dataset.type !== type);
+  });
+}
+
+// ══════════════════════════════════════════════════════════════════
+// BUILDER VIEW
+// ══════════════════════════════════════════════════════════════════
+function buildBuilderView() {
+  const list = document.getElementById('builderChecklist');
+  const bloomers = PLANTS.filter(p => p.bloomMonths && p.bloomMonths.length > 0);
+  list.innerHTML = bloomers.map(p => {
+    const dotColor = p.colorKey ? COLORS[p.colorKey].hex : '#aaa';
+    return `<label class="builder-check" data-palette-id="${p.id}">
+      <input type="checkbox" value="${p.id}" ${palette.has(p.id) ? 'checked' : ''} onchange="onBuilderCheck('${p.id}', this.checked)">
+      <span class="color-dot" style="background:${dotColor};width:9px;height:9px;border-radius:50%;display:inline-block;flex-shrink:0"></span>
+      ${p.name}
+    </label>`;
+  }).join('');
+}
+
+function onBuilderCheck(id, checked) {
+  // sync to palette
+  if (checked) {
+    palette.add(id);
+  } else {
+    palette.delete(id);
+  }
+  updatePaletteUI();
+  updateBuilder();
+}
+
+function updateBuilder() {
+  // sync builder checkboxes FROM palette (so + Palette chip on cards reflects here too)
+  document.querySelectorAll('#builderChecklist input[type="checkbox"]').forEach(cb => {
+    cb.checked = palette.has(cb.value);
+  });
+  // sync builder-check label highlight
+  document.querySelectorAll('#builderChecklist .builder-check').forEach(lbl => {
+    const id = lbl.dataset.paletteId;
+    lbl.style.background = palette.has(id) ? 'var(--primary-light)' : '';
+  });
+
+  const selected = PLANTS.filter(p => palette.has(p.id) && p.bloomMonths && p.bloomMonths.length > 0);
+  const tbody = document.getElementById('builderCalBody');
+  const facts = document.getElementById('builderFacts');
+
+  if (!selected.length) {
+    tbody.innerHTML = '<tr><td colspan="13" class="result-empty">Select plants above to build your calendar</td></tr>';
+    facts.innerHTML = '<p style="color:var(--light);font-style:italic">Select plants on the left to see your selection summary here.</p>';
+    return;
+  }
+
+  // Month coverage
+  const covered = new Set(selected.flatMap(p => p.bloomMonths));
+  const gaps = MONTHS.filter((m, i) => !covered.has(i));
+
+  facts.innerHTML = `
+    <div style="margin-bottom:0.5rem"><strong style="color:var(--primary)">${selected.length}</strong> plants selected</div>
+    <div style="margin-bottom:0.5rem">Months with bloom: <strong>${covered.size}/12</strong></div>
+    ${gaps.length ? `<div style="color:var(--accent)">⚠ Gaps: <strong>${gaps.join(', ')}</strong></div>` : '<div style="color:#2C5F2D">✅ Color every month!</div>'}
+    <div style="margin-top:0.75rem;font-size:0.76rem;color:var(--light)">
+      ${selected.map(p => `• ${p.name}`).join('<br>')}
     </div>
-    <div class="form-group"><label>Your Name *</label><input type="text" id="rsvpName" placeholder="e.g. Maria Garcia"></div>
-    <div class="form-group"><label>Contact (phone or email) *</label><input type="text" id="rsvpContact" placeholder="e.g. 480-555-1234"></div>
-    <div class="form-group"><label>How many people in your group? *</label><input type="number" id="rsvpPartySize" min="1" max="20" value="1"></div>
-    ${isEaster ? `<div class="form-group"><label>Kids' ages (helps us plan egg count!)</label><input type="text" id="rsvpKidsAges" placeholder="e.g. 3, 7, 10"></div>` : ''}
-    ${isGarage ? `
-    <div class="form-group"><label>Your street address *</label><input type="text" id="rsvpAddress" placeholder="e.g. 2441 W Orchid Ln"><div class="form-hint">Needed so Dobson Ranch can include you on their community map!</div></div>
-    <div class="form-group"><label>What will you be selling?</label><input type="text" id="rsvpSelling" placeholder="e.g. furniture, kids clothes, handmade jewelry"></div>` : ''}
-    <div class="form-group"><label>Notes (optional)</label><textarea id="rsvpNotes" placeholder="Anything we should know?"></textarea></div>`;
+  `;
 
-  document.getElementById('rsvpModalFooter').innerHTML =
-    `<button class="btn-cancel" onclick="closeModal('rsvpOverlay')">Cancel</button>
-     <button class="btn-submit" onclick="submitRsvp()">Submit RSVP</button>`;
-  openModal('rsvpOverlay');
+  tbody.innerHTML = selected.map(p => {
+    const dotColor = p.colorKey ? COLORS[p.colorKey].hex : '#aaa';
+    const cells = MONTHS.map((m, mi) =>
+      p.bloomMonths.includes(mi)
+        ? `<td><span style="display:inline-block;width:80%;height:14px;border-radius:3px;background:${dotColor};opacity:0.8"></span></td>`
+        : '<td></td>'
+    ).join('');
+    return `<tr>
+      <td class="name-col" style="font-size:0.78rem;font-weight:500;padding-left:0.5rem">
+        <span style="background:${dotColor};width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:0.4rem"></span>${p.name}
+      </td>${cells}
+    </tr>`;
+  }).join('');
 }
 
-async function submitRsvp() {
-  const e = allEvents.find(x => x.id === currentEventId);
-  const name = document.getElementById('rsvpName')?.value.trim();
-  const contact = document.getElementById('rsvpContact')?.value.trim();
-  const partySize = parseInt(document.getElementById('rsvpPartySize')?.value) || 1;
-  const kidsAges = document.getElementById('rsvpKidsAges')?.value.trim() || '';
-  const address = document.getElementById('rsvpAddress')?.value.trim() || '';
-  const selling = document.getElementById('rsvpSelling')?.value.trim() || '';
-  const notes = document.getElementById('rsvpNotes')?.value.trim() || '';
-  if (!name || !contact) { alert('Please enter your name and contact info.'); return; }
+// ══════════════════════════════════════════════════════════════════
+// MODAL
+// ══════════════════════════════════════════════════════════════════
+function openModal(id) {
+  const isStaged = !!STAGED_PLANTS.find(x => x.id === id);
+  const p = PLANTS.find(x => x.id === id) || STAGED_PLANTS.find(x => x.id === id);
+  if (!p) return;
+  const dotColor = p.colorKey ? COLORS[p.colorKey].hex : '#aaa';
 
-  const btn = document.querySelector('#rsvpModalFooter .btn-submit');
-  btn.textContent = 'Submitting…'; btn.disabled = true;
+  document.getElementById('modal').dataset.plantId = id;
+
+  // Type badge — show STAGED label for staged plants
+  document.getElementById('modalType').textContent = isStaged ? p.type + ' · PENDING APPROVAL' : p.type;
+  document.getElementById('modalName').textContent = p.name;
+
+  // Photo — no palette chip for staged plants
+  document.getElementById('modalPhoto').innerHTML =
+    `<img src="${p.photo}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;display:block;"
+       onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+     <div class="photo-placeholder" style="display:none"><span style="font-size:3rem">🌿</span><span>Photo coming soon</span></div>
+     <button class="modal-close" onclick="closeModal()">✕</button>
+     ${isStaged ? '' : `<span class="palette-chip" id="modalPaletteChip" style="top:auto;bottom:0.5rem;right:0.5rem;" onclick="togglePalette('${p.id}',event);updatePaletteUI()">
+       <input type="checkbox" class="palette-cb" ${palette.has(p.id) ? 'checked' : ''} />
+       ${palette.has(p.id) ? '✓ In Palette' : '+ Palette'}
+     </span>`}`;
+
+  document.getElementById('modalSpecs').innerHTML = [
+    { label: 'SIZE', value: p.size || 'Varies' },
+    { label: 'BLOOM COLOR', value: `<span style="background:${dotColor};width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:0.3rem"></span>${p.color || '—'}` },
+    { label: 'BLOOM SEASON', value: p.blooms || '—' },
+    { label: 'SUN', value: p.sun },
+    { label: 'WATER USE', value: p.water },
+    { label: 'TYPE', value: p.type },
+  ].map(s => `<div class="modal-spec">
+    <div class="modal-spec-label">${s.label}</div>
+    <div class="modal-spec-value">${s.value}</div>
+  </div>`).join('');
+
+  document.getElementById('modalNotes').innerHTML = `<strong>💬 HOA Notes</strong>${p.comments}`;
+
+  // Actions — staged plants show only View link, no ARC button
+  const arcBtn = document.getElementById('modalArcBtn');
+  arcBtn.style.display = isStaged ? 'none' : 'flex';
+
+  const link = document.getElementById('modalLink');
+  if (p.url) { link.href = p.url; link.style.display = 'flex'; }
+  else { link.style.display = 'none'; }
+
+  // Vote section — only show for staged plants in board view
+  const voteSection = document.getElementById('voteSection');
+  const voteFeedback = document.getElementById('voteFeedback');
+  if (isStaged) {
+    voteSection.style.display = 'block';
+    voteFeedback.style.display = 'none';
+    voteFeedback.className = 'vote-feedback';
+    currentVotePlantId = p.id;
+    loadVoteTally(p.id);
+  } else {
+    voteSection.style.display = 'none';
+    currentVotePlantId = null;
+  }
+
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal() { document.getElementById('modal').classList.remove('open'); }
+function closeModalOutside(e) { if (e.target.id === 'modal') closeModal(); }
+
+// ══════════════════════════════════════════════════════════════════
+// ARC REQUEST
+// ══════════════════════════════════════════════════════════════════
+function arcRequest(plantName) {
+  const subject = encodeURIComponent(COMMUNITY.arcSubjectPrefix + plantName);
+  const body = encodeURIComponent(
+    `Hello,\n\nI would like to submit an Architectural Request to plant: ${plantName}\n\nMy address: \nAdditional notes: \n\nPlease confirm receipt and next steps.\n\nThank you.`
+  );
+  window.open(`mailto:${COMMUNITY.arcEmail}?subject=${subject}&body=${body}`, '_blank');
+}
+
+// ═════════════════════════════════════════
+// ══════════════════════════════════════════════════════════════════
+// ARC FORM PDF DOWNLOAD
+// ══════════════════════════════════════════════════════════════════
+async function downloadARCForm(plantId) {
+  // If a single plantId passed, use just that plant. Otherwise use full palette.
+  const selected = plantId
+    ? PLANTS.filter(p => p.id === String(plantId))
+    : PLANTS.filter(p => palette.has(p.id));
+  if (!selected.length) return;
+
   try {
-    const noteParts = [kidsAges ? `Ages: ${kidsAges}` : '', address ? `Address: ${address}` : '', selling ? `Selling: ${selling}` : '', notes].filter(Boolean);
-    await airtablePost('rsvps', { full_name: name, event: [currentEventId], contact, party_size: partySize, kids_ages: kidsAges || undefined, notes: noteParts.join('\n') || undefined });
-    document.getElementById('rsvpModalBody').innerHTML = `<div class="success-msg"><div class="success-icon">🎉</div><h3>You're in, ${esc(name)}!</h3><p>We've got you down for ${esc(e.event_name)}. See you there!</p></div>`;
-    document.getElementById('rsvpModalFooter').innerHTML = `<button class="btn-submit" onclick="closeModal('rsvpOverlay')">Done</button>`;
-  } catch(err) { alert('Something went wrong. Please try again.'); btn.textContent = 'Submit RSVP'; btn.disabled = false; }
+    const { PDFDocument } = PDFLib;
+
+    // Load the ARC PDF from external file
+    const pdfBytes = await fetch(ARC_PDF_URL).then(r => r.arrayBuffer());
+    const pdfDoc = await PDFDocument.load(pdfBytes);
+    const form = pdfDoc.getForm();
+
+    // Today's date
+    const today = new Date().toLocaleDateString('en-US', { month: '2-digit', day: '2-digit', year: 'numeric' });
+
+    // Build plant description
+    const plantLines = selected.map(p =>
+      `${p.name} (${p.type}) — ${p.blooms}, ${p.size}, ${p.water} water`
+    ).join('\n');
+    const description = `Landscaping / Plant Addition — HOA Approved Plants\n\n${plantLines}\n\nAll plants are on the Dobson Terrace approved plant list.`;
+
+    // Fill fields — set font size explicitly where possible
+    try { 
+      const f2 = form.getTextField('Text2'); 
+      f2.setText('Dobson Terrace'); 
+      f2.setFontSize(12);
+    } catch(e) {}
+    try { 
+      const f3 = form.getTextField('Text3'); 
+      f3.setText(today); 
+      f3.setFontSize(12);
+    } catch(e) {}
+    try { 
+      const f11 = form.getTextField('Text11'); 
+      f11.setText(description); 
+      f11.setFontSize(11);
+    } catch(e) {}
+    try { 
+      const f12 = form.getTextField('Text12'); 
+      f12.setText('Homeowner / Self'); 
+      f12.setFontSize(12);
+    } catch(e) {}
+    try { form.getCheckBox('CheckBox1').check(); } catch(e) {}
+    try { form.getCheckBox('CheckBox2').check(); } catch(e) {}
+
+    // Flatten so fields are visible when opened
+    // form.flatten(); // Keep editable so homeowner can fill remaining fields
+
+    const filledBytes = await pdfDoc.save();
+    const blob = new Blob([filledBytes], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Dobson_Terrace_ARC_Request.pdf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+  } catch(err) {
+    console.error('PDF generation error:', err);
+    alert('Could not generate PDF. Please try the email option instead.');
+  }
 }
 
-// ─── VOLUNTEER ────────────────────────────────────────────────
-function openVolunteer(id) {
-  const e = allEvents.find(x => x.id === id);
-  if (!e) return;
-  currentEventId = id;
-  const isEggStuffing = e.event_name.toLowerCase().includes('stuff');
 
-  document.getElementById('volunteerModalTitle').textContent = `Volunteer — ${e.event_name}`;
-  document.getElementById('volunteerModalBody').innerHTML = `
-    <div class="event-preview">
-      <h4>${esc(e.event_name)}</h4>
-      <p>📅 ${fmtDate(e.date)} at ${fmtTime(e.date)} &nbsp;|&nbsp; 📍 ${esc(e.location||'TBD')}</p>
-    </div>
-    ${isEggStuffing ? `<div class="donation-info"><h4>🎁 Can you bring supplies?</h4><p>We're collecting candy and small toys to stuff in the eggs. Drop-offs welcome at <strong>Joanne's house on the corner of Bullmoose & Orchid</strong> — look for the blow-up decorations!</p></div>` : ''}
-    <div class="form-group"><label>Your Name *</label><input type="text" id="volName" placeholder="e.g. Maria Garcia"></div>
-    <div class="form-group"><label>Contact (phone or email) *</label><input type="text" id="volContact" placeholder="e.g. 480-555-1234"></div>
-    <div class="form-group"><label>How many people are you bringing?</label><input type="number" id="volPartySize" min="1" max="10" value="1"></div>
-    ${isEggStuffing ? `
-    <div class="form-group"><label>Will you bring candy or toys to donate?</label>
-      <select id="volCanDonate"><option value="">Select one</option><option value="yes">Yes!</option><option value="no">Not this time</option><option value="maybe">Maybe</option></select></div>
-    <div class="form-group"><label>What will you bring? (optional)</label><input type="text" id="volDonationDesc" placeholder="e.g. bag of Skittles, small bouncy balls"></div>` : ''}
-    <div class="form-group"><label>Notes (optional)</label><textarea id="volNotes" placeholder="Anything we should know?"></textarea></div>`;
+// ══════════════════════════════════════════════════════════════════
+// INIT — expose all functions globally so onclick handlers always work
+// ══════════════════════════════════════════════════════════════════
 
-  document.getElementById('volunteerModalFooter').innerHTML =
-    `<button class="btn-cancel" onclick="closeModal('volunteerOverlay')">Cancel</button>
-     <button class="btn-submit terra" onclick="submitVolunteer()">Sign Me Up!</button>`;
-  openModal('volunteerOverlay');
+// ══════════════════════════════════════════════════════════════════
+// BOARD VIEW
+// ══════════════════════════════════════════════════════════════════
+function showBoardLogin(btn) {
+  const pin = prompt('Enter board PIN to access staged plants:');
+  if (pin === null) return; // cancelled
+  if (pin === BOARD_PIN) {
+    buildBoardView();
+    showView('board', btn);
+  } else {
+    alert('Incorrect PIN.');
+  }
 }
 
-async function submitVolunteer() {
-  const e = allEvents.find(x => x.id === currentEventId);
-  const name = document.getElementById('volName')?.value.trim();
-  const contact = document.getElementById('volContact')?.value.trim();
-  const partySize = parseInt(document.getElementById('volPartySize')?.value) || 1;
-  const canDonate = document.getElementById('volCanDonate')?.value || '';
-  const donationDesc = document.getElementById('volDonationDesc')?.value.trim() || '';
-  const notes = document.getElementById('volNotes')?.value.trim() || '';
-  if (!name || !contact) { alert('Please enter your name and contact info.'); return; }
+function buildBoardView() {
+  const grid = document.getElementById('boardGrid');
+  const empty = document.getElementById('boardEmpty');
+  if (!STAGED_PLANTS.length) {
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  grid.innerHTML = STAGED_PLANTS.map(function(p) {
+    const dotColor = p.colorKey ? COLORS[p.colorKey].hex : '#ccc';
+    const colorPill = p.colorKey
+      ? '<span class="spec-pill"><span class="color-swatch-inline" style="background:' + dotColor + '"></span>' + p.color + '</span>'
+      : '';
+    return '<div class="plant-card" style="border:2px solid var(--accent-light);cursor:pointer" data-type="' + p.type + '" onclick="openModal(\'' + p.id + '\')">' +
+      '<div class="plant-photo" style="position:relative">' +
+        '<img src="' + p.photo + '" alt="' + p.name + '" onerror="this.style.display=\x27none\x27;this.nextElementSibling.style.display=\x27flex\x27" />' +
+        '<div class="photo-placeholder" style="display:none"><span>🌿</span><span style="font-size:0.65rem">Photo coming soon</span></div>' +
+        '<span class="plant-type-badge" style="background:var(--accent)">STAGED</span>' +
+      '</div>' +
+      '<div class="plant-card-body">' +
+        '<div class="plant-card-name">' + p.name + '</div>' +
+        '<div class="plant-card-specs">' +
+          '<span class="spec-pill">📐 ' + p.size + '</span>' +
+          '<span class="spec-pill">☀️ ' + p.sun + '</span>' +
+          '<span class="spec-pill">💧 ' + p.water + '</span>' +
+          colorPill +
+        '</div>' +
+        '<div class="plant-card-comment">' + p.comments + '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
 
-  const btn = document.querySelector('#volunteerModalFooter .btn-submit');
-  btn.textContent = 'Signing up…'; btn.disabled = true;
+
+// ══════════════════════════════════════════════════════════════════
+// BOARD VOTING
+// ══════════════════════════════════════════════════════════════════
+let currentVotePlantId = null;
+
+async function loadVoteTally(plantId) {
+  const tally = { Yes: 0, No: 0, 'More Info': 0 };
   try {
-    await airtablePost('volunteers', { full_name: name, event: [currentEventId], contact, party_size: partySize, can_donate: canDonate === 'yes', donation_description: donationDesc || undefined, notes: notes || undefined });
-    document.getElementById('volunteerModalBody').innerHTML = `<div class="success-msg"><div class="success-icon">🙌</div><h3>Thank you, ${esc(name)}!</h3><p>You're signed up to volunteer for ${esc(e.event_name)}. We'll be in touch!</p></div>`;
-    document.getElementById('volunteerModalFooter').innerHTML = `<button class="btn-submit" onclick="closeModal('volunteerOverlay')">Done</button>`;
-  } catch(err) { alert('Something went wrong. Please try again.'); btn.textContent = 'Sign Me Up!'; btn.disabled = false; }
+    // Fetch all Board Votes and filter in JS — linked record formulas are unreliable
+    let allVotes = [], offset = null;
+    do {
+      const params = '?view=Grid+view' + (offset ? '&offset=' + offset : '');
+      const data = await airtableFetch('Board Votes', params);
+      allVotes = allVotes.concat(data.records || []);
+      offset = data.offset || null;
+    } while (offset);
+
+    allVotes.forEach(function(r) {
+      const linked = r.fields['Plant'] || [];
+      if (linked.indexOf(plantId) !== -1) {
+        const v = r.fields['Vote'];
+        if (tally.hasOwnProperty(v)) tally[v]++;
+      }
+    });
+  } catch(e) { console.warn('Could not load vote tally', e); }
+  const el = document.getElementById('voteTally');
+  if (el) {
+    el.innerHTML =
+      '<span class="tally-chip tally-yes">✅ ' + tally['Yes'] + ' Yes</span>' +
+      '<span class="tally-chip tally-no">❌ ' + tally['No'] + ' No</span>' +
+      '<span class="tally-chip tally-more">🤔 ' + tally['More Info'] + ' More Info</span>';
+  }
 }
 
-// ─── DONATION ─────────────────────────────────────────────────
-function openDonation(id) {
-  const e = allEvents.find(x => x.id === id);
-  if (!e) return;
-  currentEventId = id;
+async function submitVote(voteValue) {
+  const name = (document.getElementById('voterName').value || '').trim();
+  if (!name) {
+    const fb = document.getElementById('voteFeedback');
+    fb.textContent = 'Please enter your first name before voting.';
+    fb.className = 'vote-feedback error';
+    return;
+  }
+  if (!currentVotePlantId) return;
 
-  document.getElementById('donationModalBody').innerHTML = `
-    <div class="donation-info"><h4>🎁 Drop-off Location</h4><p>Bring candy or small toys to <strong>Joanne's house on the corner of Bullmoose & Orchid</strong> — look for the blow-up decorations! Let us know what you plan to bring so we can plan accordingly.</p></div>
-    <div class="form-group"><label>Your Name *</label><input type="text" id="donorName" placeholder="e.g. Maria Garcia"></div>
-    <div class="form-group"><label>Contact (phone or email)</label><input type="text" id="donorContact" placeholder="e.g. 480-555-1234"></div>
-    <div class="form-group"><label>What will you donate? *</label><input type="text" id="donorDesc" placeholder="e.g. bag of Skittles, small bouncy balls, stickers"></div>
-    <div class="form-group"><label>Notes (optional)</label><textarea id="donorNotes" placeholder="e.g. I'll drop off Friday evening"></textarea></div>`;
+  // Disable buttons while submitting
+  document.querySelectorAll('.btn-vote').forEach(function(b) { b.disabled = true; });
+  const fb = document.getElementById('voteFeedback');
+  fb.style.display = 'none';
+  fb.className = 'vote-feedback';
 
-  document.getElementById('donationModalFooter').innerHTML =
-    `<button class="btn-cancel" onclick="closeModal('donationOverlay')">Cancel</button>
-     <button class="btn-submit" onclick="submitDonation()">I'll Donate!</button>`;
-  openModal('donationOverlay');
-}
-
-async function submitDonation() {
-  const name = document.getElementById('donorName')?.value.trim();
-  const contact = document.getElementById('donorContact')?.value.trim() || '';
-  const desc = document.getElementById('donorDesc')?.value.trim();
-  const notes = document.getElementById('donorNotes')?.value.trim() || '';
-  if (!name || !desc) { alert('Please enter your name and what you plan to donate.'); return; }
-
-  const btn = document.querySelector('#donationModalFooter .btn-submit');
-  btn.textContent = 'Submitting…'; btn.disabled = true;
   try {
-    await airtablePost('donations', { donor_name: name, event: [currentEventId], contact: contact || undefined, donation_description: desc, notes: notes || undefined, drop_off_completed: false });
-    document.getElementById('donationModalBody').innerHTML = `<div class="success-msg"><div class="success-icon">🎁</div><h3>Thank you, ${esc(name)}!</h3><p>Your donation is logged! Drop off ${esc(desc)} at <strong>Joanne's house on the corner of Bullmoose & Orchid</strong> — look for the blow-up decorations. You're making the egg hunt extra special!</p></div>`;
-    document.getElementById('donationModalFooter').innerHTML = `<button class="btn-submit" onclick="closeModal('donationOverlay')">Done</button>`;
-  } catch(err) { alert('Something went wrong. Please try again.'); btn.textContent = "I'll Donate!"; btn.disabled = false; }
+    await airtableFetch('Board Votes', '', {
+      method: 'POST',
+      body: {
+        fields: {
+          'Board Member': name,
+          'Vote': voteValue,
+          'Plant': [currentVotePlantId],
+          'Date': new Date().toISOString().split('T')[0]
+        }
+      }
+    });
+    fb.textContent = 'Vote recorded! Thank you, ' + name + '.';
+    fb.className = 'vote-feedback success';
+    // Refresh tally
+    await loadVoteTally(currentVotePlantId);
+    // Clear name input
+    document.getElementById('voterName').value = '';
+  } catch(e) {
+    fb.textContent = 'Could not save vote. Please try again.';
+    fb.className = 'vote-feedback error';
+  } finally {
+    document.querySelectorAll('.btn-vote').forEach(function(b) { b.disabled = false; });
+  }
 }
 
-// ─── UTILS ───────────────────────────────────────────────────
-function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
-function closeOnOverlay(e, id) { if (e.target.id === id) closeModal(id); }
-function esc(s) { return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
-function fmtDate(iso) { return new Date(iso).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'America/Phoenix'}); }
-function fmtTime(iso) { return new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true,timeZone:'America/Phoenix'}); }
+window.showView = showView;
+window.filterCalendar = filterCalendar;
+window.filterPlants = filterPlants;
+window.openModal = openModal;
+window.closeModal = closeModal;
+window.closeModalOutside = closeModalOutside;
+window.arcRequest = arcRequest;
+window.updateBuilder = updateBuilder;
+window.togglePalette = togglePalette;
+window.updatePaletteUI = updatePaletteUI;
+window.submitPaletteARC = submitPaletteARC;
+window.onBuilderCheck = onBuilderCheck;
+window.downloadARCForm = downloadARCForm;
+window.showBoardLogin = showBoardLogin;
+window.submitVote = submitVote;
+
+loadFromAirtable();
 </script>
 </body>
 </html>
