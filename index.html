@@ -261,12 +261,17 @@ async function airtablePost(table, fields) {
 
 async function loadEvents() {
   try {
-    const data = await airtable('events');
+    console.log('Fetching from:', `${PROXY}/${BASE}/events`);
+    const res = await fetch(`${PROXY}/${BASE}/events`);
+    console.log('Response status:', res.status);
+    const data = await res.json();
+    console.log('Data received:', JSON.stringify(data).slice(0, 200));
     allEvents = (data.records || []).map(r => ({ id: r.id, ...r.fields }));
-    // Sort by date client-side instead of via query string
+    console.log('Events mapped:', allEvents.length);
     allEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
     renderEvents();
   } catch(e) {
+    console.error('Load events error:', e);
     document.getElementById('eventsGrid').innerHTML =
       `<div class="empty-state"><div class="empty-icon">⚠️</div><p>Could not load events. Please refresh.</p></div>`;
   }
