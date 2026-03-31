@@ -248,6 +248,11 @@ function getColorClass(e) {
 
 window.addEventListener('DOMContentLoaded', loadEvents);
 
+// Fallback in case DOMContentLoaded already fired
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  setTimeout(loadEvents, 100);
+}
+
 async function airtable(path, method = 'GET', body = null) {
   const opts = { method, headers: { 'Content-Type': 'application/json' } };
   if (body) opts.body = JSON.stringify(body);
