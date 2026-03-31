@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="HandheldFriendly" content="true">
+<title>Dobson Terrace — Spring 2026 Events</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #6b8f6b;
+    --sage-light: #a8c5a8;
+    --sage-pale: #e8f0e8;
+    --sage-dark: #3d5c3d;
+    --terra: #c4704a;
+    --terra-light: #e8a882;
+    --terra-pale: #fdf0ea;
+    --cream: #faf7f2;
+    --charcoal: #2c2c2c;
+    --mid-gray: #6b6b6b;
+    --light-gray: #e8e4df;
+    --border: #d4cec7;
+    --shadow-sm: 0 2px 8px rgba(44,44,44,0.08);
+    --shadow-md: 0 4px 20px rgba(44,44,44,0.12);
+    --shadow-lg: 0 8px 40px rgba(44,44,44,0.16);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; max-width: 100vw; overflow-x: hidden; }
+  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--charcoal); min-height: 100vh; max-width: 100vw; overflow-x: hidden; }
+
+  header { background: var(--sage-dark); color: white; position: sticky; top: 0; z-index: 100; box-shadow: var(--shadow-md); }
+  .header-inner { max-width: 1100px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .header-brand { display: flex; align-items: center; gap: 12px; }
+  .header-logo { width: 42px; height: 42px; background: var(--sage-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .header-title { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; line-height: 1.2; }
+  .header-subtitle { font-size: 0.78rem; opacity: 0.75; font-weight: 300; letter-spacing: 0.5px; text-transform: uppercase; }
+  .header-links { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .header-link { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 7px 16px; border-radius: 8px; font-size: 0.82rem; cursor: pointer; font-family: inherit; font-weight: 500; transition: background 0.2s; text-decoration: none; display: inline-block; }
+  .header-link:hover { background: rgba(255,255,255,0.25); }
+
+  .hero { background: linear-gradient(135deg, var(--sage-dark) 0%, var(--sage) 100%); color: white; padding: 48px 24px; text-align: center; }
+  .hero-inner { max-width: 700px; margin: 0 auto; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+  .hero p { font-size: 1.05rem; opacity: 0.88; line-height: 1.65; font-weight: 300; }
+  .hero-season { display: inline-block; background: var(--terra); color: white; padding: 5px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; margin-bottom: 16px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+  .main { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
+  .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--terra); margin-bottom: 6px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--charcoal); margin-bottom: 24px; }
+
+  .events-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; margin-bottom: 48px; }
+  .event-card { background: white; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow-sm); overflow: hidden; transition: all 0.2s; display: flex; flex-direction: column; }
+  .event-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--sage-light); }
+  .event-card-top { height: 6px; }
+  .color-egg { background: linear-gradient(90deg, #f9a8d4, #c084fc); }
+  .color-hunt { background: linear-gradient(90deg, #6ee7b7, #3b82f6); }
+  .color-garage { background: linear-gradient(90deg, #fbbf24, #f59e0b); }
+  .color-movie { background: linear-gradient(90deg, #93c5fd, #6366f1); }
+  .color-prep { background: linear-gradient(90deg, var(--sage-light), var(--sage)); }
+  .color-volunteer { background: linear-gradient(90deg, var(--terra-light), var(--terra)); }
+  .event-card-body { padding: 20px; flex: 1; }
+  .event-type-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--mid-gray); margin-bottom: 10px; }
+  .event-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
+  .event-meta { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+  .event-meta-row { display: flex; align-items: flex-start; gap: 8px; font-size: 0.85rem; color: var(--mid-gray); }
+  .event-meta-icon { flex-shrink: 0; margin-top: 1px; }
+  .event-desc { font-size: 0.88rem; line-height: 1.6; color: var(--charcoal); }
+  .event-card-footer { padding: 14px 20px; background: var(--cream); border-top: 1px solid var(--border); display: flex; gap: 8px; flex-wrap: wrap; }
+  .btn-rsvp { background: var(--sage-dark); color: white; border: none; padding: 9px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.15s; flex: 1; text-align: center; }
+  .btn-rsvp:hover { background: #2d4a2d; }
+  .btn-volunteer { background: var(--terra); color: white; border: none; padding: 9px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.15s; flex: 1; text-align: center; }
+  .btn-volunteer:hover { background: #b05f3a; }
+  .btn-donate { background: white; color: var(--sage-dark); border: 2px solid var(--sage); padding: 8px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.15s; flex: 1; text-align: center; }
+  .btn-donate:hover { background: var(--sage-pale); }
+
+  .loading-state { text-align: center; padding: 60px 20px; color: var(--mid-gray); grid-column: 1/-1; }
+  .spinner { width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: var(--sage); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .empty-state { text-align: center; padding: 60px 20px; color: var(--mid-gray); grid-column: 1/-1; }
+  .empty-icon { font-size: 3rem; margin-bottom: 16px; }
+
+  .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; display: flex; align-items: flex-end; justify-content: center; padding: 0; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+  .overlay.open { opacity: 1; pointer-events: all; }
+  .modal { background: white; border-radius: var(--radius) var(--radius) 0 0; width: 100%; max-width: 560px; max-height: 92vh; overflow-y: auto; box-shadow: var(--shadow-lg); transform: translateY(30px); transition: transform 0.25s; }
+  .overlay.open .modal { transform: translateY(0); }
+  .modal-header { padding: 22px 24px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: white; z-index: 10; }
+  .modal-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; }
+  .modal-close { width: 32px; height: 32px; border: none; background: var(--light-gray); border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; color: var(--mid-gray); transition: background 0.15s; flex-shrink: 0; }
+  .modal-close:hover { background: var(--border); }
+  .modal-body { padding: 22px 24px; }
+  .modal-footer { padding: 16px 24px; border-top: 1px solid var(--border); display: flex; gap: 10px; justify-content: flex-end; position: sticky; bottom: 0; background: white; }
+
+  .form-group { margin-bottom: 18px; }
+  label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
+  .form-hint { font-size: 0.78rem; color: var(--mid-gray); margin-top: 4px; }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea, select { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; color: var(--charcoal); background: white; transition: border-color 0.15s; outline: none; -webkit-appearance: none; }
+  input:focus, textarea:focus, select:focus { border-color: var(--sage); }
+  textarea { resize: vertical; min-height: 80px; }
+
+  .info-box { background: var(--sage-pale); border: 1px solid var(--sage-light); border-radius: 8px; padding: 12px 14px; font-size: 0.83rem; color: var(--sage-dark); margin-bottom: 18px; line-height: 1.55; }
+  .event-preview { background: var(--cream); border: 1px solid var(--border); border-radius: 8px; padding: 14px; margin-bottom: 18px; }
+  .event-preview h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 4px; }
+  .event-preview p { font-size: 0.82rem; color: var(--mid-gray); }
+  .donation-info { background: var(--sage-pale); border-radius: 10px; padding: 16px; margin-bottom: 18px; }
+  .donation-info h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 6px; color: var(--sage-dark); }
+  .donation-info p { font-size: 0.85rem; color: var(--sage-dark); line-height: 1.55; }
+
+  .btn-cancel { background: white; color: var(--mid-gray); border: 1.5px solid var(--border); padding: 10px 20px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; cursor: pointer; font-family: inherit; }
+  .btn-submit { background: var(--sage-dark); color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.15s; }
+  .btn-submit:hover { background: #2d4a2d; }
+  .btn-submit.terra { background: var(--terra); }
+  .btn-submit.terra:hover { background: #b05f3a; }
+  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .success-msg { text-align: center; padding: 24px 16px; }
+  .success-icon { font-size: 3rem; margin-bottom: 12px; }
+  .success-msg h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 8px; }
+  .success-msg p { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.6; }
+
+  footer { background: var(--sage-dark); color: rgba(255,255,255,0.7); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.6; margin-top: 48px; }
+  footer p { max-width: 700px; margin: 0 auto; }
+  footer a { color: var(--sage-light); }
+  footer strong { color: white; }
+
+  @media (max-width: 640px) {
+    .header-inner { padding: 12px 16px; }
+    .header-title { font-size: 1rem; }
+    .header-subtitle { display: none; }
+    .header-logo { width: 34px; height: 34px; font-size: 16px; }
+    .header-link { font-size: 0.75rem; padding: 6px 10px; }
+    .hero { padding: 32px 16px; }
+    .hero h1 { font-size: 1.7rem; }
+    .hero p { font-size: 0.95rem; }
+    .main { padding: 24px 16px; }
+    .events-grid { grid-template-columns: 1fr; gap: 16px; }
+    .event-card-footer { flex-direction: column; }
+    .btn-rsvp, .btn-volunteer, .btn-donate { width: 100%; }
+    .modal-header { padding: 18px 18px 14px; }
+    .modal-body { padding: 16px 18px; }
+    .modal-footer { padding: 14px 18px; flex-direction: column-reverse; }
+    .modal-footer .btn-submit, .modal-footer .btn-cancel { width: 100%; text-align: center; padding: 13px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="header-brand">
+      <div class="header-logo">🏘️</div>
+      <div>
+        <div class="header-title">Dobson Terrace</div>
+        <div class="header-subtitle">Spring 2026 Events</div>
+      </div>
+    </div>
+    <div class="header-links">
+      <a href="https://bridgetthart.github.io/approved-garden-dobson-terrace" target="_blank" class="header-link">🌿 Plant Guide</a>
+      <a href="https://script.google.com/macros/s/AKfycbxRwFca9Xoe9nY-FC7dpvM3lb0aemYdnC4eINNuSfNkzQDwShCsRyxyWN3jwVZty093/exec" target="_blank" class="header-link">🤝 Help Board</a>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-season">Spring 2026</div>
+    <h1>Something's Always Happening at Dobson Terrace</h1>
+    <p>Sign up for events, volunteer to help, or donate supplies. Everything you need to get involved is right here.</p>
+  </div>
+</div>
+
+<div class="main">
+  <div class="section-label">Upcoming</div>
+  <div class="section-title">Spring Events</div>
+  <div class="events-grid" id="eventsGrid">
+    <div class="loading-state"><div class="spinner"></div><p>Loading events…</p></div>
+  </div>
+</div>
+
+<!-- RSVP MODAL -->
+<div class="overlay" id="rsvpOverlay" onclick="closeOnOverlay(event,'rsvpOverlay')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title" id="rsvpModalTitle">RSVP</div>
+      <button class="modal-close" onclick="closeModal('rsvpOverlay')">✕</button>
+    </div>
+    <div class="modal-body" id="rsvpModalBody"></div>
+    <div class="modal-footer" id="rsvpModalFooter"></div>
+  </div>
+</div>
+
+<!-- VOLUNTEER MODAL -->
+<div class="overlay" id="volunteerOverlay" onclick="closeOnOverlay(event,'volunteerOverlay')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title" id="volunteerModalTitle">Volunteer Sign-Up</div>
+      <button class="modal-close" onclick="closeModal('volunteerOverlay')">✕</button>
+    </div>
+    <div class="modal-body" id="volunteerModalBody"></div>
+    <div class="modal-footer" id="volunteerModalFooter"></div>
+  </div>
+</div>
+
+<!-- DONATION MODAL -->
+<div class="overlay" id="donationOverlay" onclick="closeOnOverlay(event,'donationOverlay')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title">Donate Supplies</div>
+      <button class="modal-close" onclick="closeModal('donationOverlay')">✕</button>
+    </div>
+    <div class="modal-body" id="donationModalBody"></div>
+    <div class="modal-footer" id="donationModalFooter"></div>
+  </div>
+</div>
+
+<footer>
+  <p>
+    <strong>⭐ Dobson Terrace Neighborhood Events</strong><br>
+    These events are community-organized and not official programs of Dobson Terrace HOA or Trestle Property Management.
+    Questions? Contact <a href="mailto:bridgettrhart@gmail.com">bridgettrhart@gmail.com</a>
+  </p>
+</footer>
+
+<script>
+const PROXY = 'https://airtable-proxy.bridgettrhart.workers.dev';
+const BASE  = 'appqnxeicJxL0v18h';
+
+let allEvents = [];
+let currentEventId = null;
+
+const EVENT_CONFIG = {
+  event:           { label: 'Community Event',    icon: '🎉' },
+  prep_meeting:    { label: 'Prep & Volunteers',  icon: '🛠️' },
+  volunteer_shift: { label: 'Volunteer Shift',    icon: '🙋' },
+};
+
+function getColorClass(e) {
+  const name = (e.event_name || '').toLowerCase();
+  if (name.includes('egg') && name.includes('hunt')) return 'color-hunt';
+  if (name.includes('stuff') || name.includes('volunteer')) return 'color-volunteer';
+  if (name.includes('garage') || name.includes('sale')) return 'color-garage';
+  if (name.includes('movie')) return 'color-movie';
+  if (name.includes('easter') || name.includes('egg')) return 'color-egg';
+  return 'color-prep';
+}
+
+window.addEventListener('DOMContentLoaded', loadEvents);
+
+async function airtable(path, method = 'GET', body = null) {
+  const opts = { method, headers: { 'Content-Type': 'application/json' } };
+  if (body) opts.body = JSON.stringify(body);
+  const res = await fetch(`${PROXY}/${BASE}/${path}`, opts);
+  return res.json();
+}
+
+async function airtablePost(table, fields) {
+  return airtable(table, 'POST', { records: [{ fields }] });
+}
+
+async function loadEvents() {
+  try {
+    const data = await airtable('events?sort%5B0%5D%5Bfield%5D=date&sort%5B0%5D%5Bdirection%5D=asc');
+    allEvents = (data.records || []).map(r => ({ id: r.id, ...r.fields }));
+    renderEvents();
+  } catch(e) {
+    document.getElementById('eventsGrid').innerHTML =
+      `<div class="empty-state"><div class="empty-icon">⚠️</div><p>Could not load events. Please refresh.</p></div>`;
+  }
+}
+
+function renderEvents() {
+  const grid = document.getElementById('eventsGrid');
+  const now = new Date(Date.now() - 86400000);
+  const upcoming = allEvents.filter(e => new Date(e.date) >= now);
+
+  if (!upcoming.length) {
+    grid.innerHTML = `<div class="empty-state"><div class="empty-icon">🌱</div><p>No upcoming events right now. Check back soon!</p></div>`;
+    return;
+  }
+
+  grid.innerHTML = upcoming.map(e => {
+    const cfg = EVENT_CONFIG[e.event_type] || EVENT_CONFIG.event;
+    const colorClass = getColorClass(e);
+    const buttons = [];
+    if (e.accepts_rsvp)       buttons.push(`<button class="btn-rsvp" onclick="openRsvp('${e.id}')">📋 RSVP</button>`);
+    if (e.accepts_volunteers)  buttons.push(`<button class="btn-volunteer" onclick="openVolunteer('${e.id}')">🙋 Volunteer</button>`);
+    if (e.accepts_donations)   buttons.push(`<button class="btn-donate" onclick="openDonation('${e.id}')">🎁 Donate</button>`);
+
+    return `<div class="event-card">
+      <div class="event-card-top ${colorClass}"></div>
+      <div class="event-card-body">
+        <div class="event-type-tag">${cfg.icon} ${cfg.label}</div>
+        <div class="event-name">${esc(e.event_name)}</div>
+        <div class="event-meta">
+          <div class="event-meta-row"><span class="event-meta-icon">📅</span><span>${fmtDate(e.date)} at ${fmtTime(e.date)}</span></div>
+          <div class="event-meta-row"><span class="event-meta-icon">📍</span><span>${esc(e.location || 'TBD')}</span></div>
+        </div>
+        <div class="event-desc">${esc(e.description || '')}</div>
+      </div>
+      ${buttons.length ? `<div class="event-card-footer">${buttons.join('')}</div>` : ''}
+    </div>`;
+  }).join('');
+}
+
+// ─── RSVP ────────────────────────────────────────────────────
+function openRsvp(id) {
+  const e = allEvents.find(x => x.id === id);
+  if (!e) return;
+  currentEventId = id;
+  const isEaster = e.event_name.toLowerCase().includes('egg hunt');
+  const isGarage = e.event_name.toLowerCase().includes('garage');
+
+  document.getElementById('rsvpModalTitle').textContent = `RSVP — ${e.event_name}`;
+  document.getElementById('rsvpModalBody').innerHTML = `
+    <div class="event-preview">
+      <h4>${esc(e.event_name)}</h4>
+      <p>📅 ${fmtDate(e.date)} at ${fmtTime(e.date)} &nbsp;|&nbsp; 📍 ${esc(e.location||'TBD')}</p>
+    </div>
+    <div class="form-group"><label>Your Name *</label><input type="text" id="rsvpName" placeholder="e.g. Maria Garcia"></div>
+    <div class="form-group"><label>Contact (phone or email) *</label><input type="text" id="rsvpContact" placeholder="e.g. 480-555-1234"></div>
+    <div class="form-group"><label>How many people in your group? *</label><input type="number" id="rsvpPartySize" min="1" max="20" value="1"></div>
+    ${isEaster ? `<div class="form-group"><label>Kids' ages (helps us plan egg count!)</label><input type="text" id="rsvpKidsAges" placeholder="e.g. 3, 7, 10"></div>` : ''}
+    ${isGarage ? `
+    <div class="form-group"><label>Your street address *</label><input type="text" id="rsvpAddress" placeholder="e.g. 2441 W Orchid Ln"><div class="form-hint">Needed so Dobson Ranch can include you on their community map!</div></div>
+    <div class="form-group"><label>What will you be selling?</label><input type="text" id="rsvpSelling" placeholder="e.g. furniture, kids clothes, handmade jewelry"></div>` : ''}
+    <div class="form-group"><label>Notes (optional)</label><textarea id="rsvpNotes" placeholder="Anything we should know?"></textarea></div>`;
+
+  document.getElementById('rsvpModalFooter').innerHTML =
+    `<button class="btn-cancel" onclick="closeModal('rsvpOverlay')">Cancel</button>
+     <button class="btn-submit" onclick="submitRsvp()">Submit RSVP</button>`;
+  openModal('rsvpOverlay');
+}
+
+async function submitRsvp() {
+  const e = allEvents.find(x => x.id === currentEventId);
+  const name = document.getElementById('rsvpName')?.value.trim();
+  const contact = document.getElementById('rsvpContact')?.value.trim();
+  const partySize = parseInt(document.getElementById('rsvpPartySize')?.value) || 1;
+  const kidsAges = document.getElementById('rsvpKidsAges')?.value.trim() || '';
+  const address = document.getElementById('rsvpAddress')?.value.trim() || '';
+  const selling = document.getElementById('rsvpSelling')?.value.trim() || '';
+  const notes = document.getElementById('rsvpNotes')?.value.trim() || '';
+  if (!name || !contact) { alert('Please enter your name and contact info.'); return; }
+
+  const btn = document.querySelector('#rsvpModalFooter .btn-submit');
+  btn.textContent = 'Submitting…'; btn.disabled = true;
+  try {
+    const noteParts = [kidsAges ? `Ages: ${kidsAges}` : '', address ? `Address: ${address}` : '', selling ? `Selling: ${selling}` : '', notes].filter(Boolean);
+    await airtablePost('rsvps', { full_name: name, event: [currentEventId], contact, party_size: partySize, kids_ages: kidsAges || undefined, notes: noteParts.join('\n') || undefined });
+    document.getElementById('rsvpModalBody').innerHTML = `<div class="success-msg"><div class="success-icon">🎉</div><h3>You're in, ${esc(name)}!</h3><p>We've got you down for ${esc(e.event_name)}. See you there!</p></div>`;
+    document.getElementById('rsvpModalFooter').innerHTML = `<button class="btn-submit" onclick="closeModal('rsvpOverlay')">Done</button>`;
+  } catch(err) { alert('Something went wrong. Please try again.'); btn.textContent = 'Submit RSVP'; btn.disabled = false; }
+}
+
+// ─── VOLUNTEER ────────────────────────────────────────────────
+function openVolunteer(id) {
+  const e = allEvents.find(x => x.id === id);
+  if (!e) return;
+  currentEventId = id;
+  const isEggStuffing = e.event_name.toLowerCase().includes('stuff');
+
+  document.getElementById('volunteerModalTitle').textContent = `Volunteer — ${e.event_name}`;
+  document.getElementById('volunteerModalBody').innerHTML = `
+    <div class="event-preview">
+      <h4>${esc(e.event_name)}</h4>
+      <p>📅 ${fmtDate(e.date)} at ${fmtTime(e.date)} &nbsp;|&nbsp; 📍 ${esc(e.location||'TBD')}</p>
+    </div>
+    ${isEggStuffing ? `<div class="donation-info"><h4>🎁 Can you bring supplies?</h4><p>We're collecting candy and small toys to stuff in the eggs. Drop-offs welcome at <strong>Joanne's house on the corner of Bullmoose & Orchid</strong> — look for the blow-up decorations!</p></div>` : ''}
+    <div class="form-group"><label>Your Name *</label><input type="text" id="volName" placeholder="e.g. Maria Garcia"></div>
+    <div class="form-group"><label>Contact (phone or email) *</label><input type="text" id="volContact" placeholder="e.g. 480-555-1234"></div>
+    <div class="form-group"><label>How many people are you bringing?</label><input type="number" id="volPartySize" min="1" max="10" value="1"></div>
+    ${isEggStuffing ? `
+    <div class="form-group"><label>Will you bring candy or toys to donate?</label>
+      <select id="volCanDonate"><option value="">Select one</option><option value="yes">Yes!</option><option value="no">Not this time</option><option value="maybe">Maybe</option></select></div>
+    <div class="form-group"><label>What will you bring? (optional)</label><input type="text" id="volDonationDesc" placeholder="e.g. bag of Skittles, small bouncy balls"></div>` : ''}
+    <div class="form-group"><label>Notes (optional)</label><textarea id="volNotes" placeholder="Anything we should know?"></textarea></div>`;
+
+  document.getElementById('volunteerModalFooter').innerHTML =
+    `<button class="btn-cancel" onclick="closeModal('volunteerOverlay')">Cancel</button>
+     <button class="btn-submit terra" onclick="submitVolunteer()">Sign Me Up!</button>`;
+  openModal('volunteerOverlay');
+}
+
+async function submitVolunteer() {
+  const e = allEvents.find(x => x.id === currentEventId);
+  const name = document.getElementById('volName')?.value.trim();
+  const contact = document.getElementById('volContact')?.value.trim();
+  const partySize = parseInt(document.getElementById('volPartySize')?.value) || 1;
+  const canDonate = document.getElementById('volCanDonate')?.value || '';
+  const donationDesc = document.getElementById('volDonationDesc')?.value.trim() || '';
+  const notes = document.getElementById('volNotes')?.value.trim() || '';
+  if (!name || !contact) { alert('Please enter your name and contact info.'); return; }
+
+  const btn = document.querySelector('#volunteerModalFooter .btn-submit');
+  btn.textContent = 'Signing up…'; btn.disabled = true;
+  try {
+    await airtablePost('volunteers', { full_name: name, event: [currentEventId], contact, party_size: partySize, can_donate: canDonate === 'yes', donation_description: donationDesc || undefined, notes: notes || undefined });
+    document.getElementById('volunteerModalBody').innerHTML = `<div class="success-msg"><div class="success-icon">🙌</div><h3>Thank you, ${esc(name)}!</h3><p>You're signed up to volunteer for ${esc(e.event_name)}. We'll be in touch!</p></div>`;
+    document.getElementById('volunteerModalFooter').innerHTML = `<button class="btn-submit" onclick="closeModal('volunteerOverlay')">Done</button>`;
+  } catch(err) { alert('Something went wrong. Please try again.'); btn.textContent = 'Sign Me Up!'; btn.disabled = false; }
+}
+
+// ─── DONATION ─────────────────────────────────────────────────
+function openDonation(id) {
+  const e = allEvents.find(x => x.id === id);
+  if (!e) return;
+  currentEventId = id;
+
+  document.getElementById('donationModalBody').innerHTML = `
+    <div class="donation-info"><h4>🎁 Drop-off Location</h4><p>Bring candy or small toys to <strong>Joanne's house on the corner of Bullmoose & Orchid</strong> — look for the blow-up decorations! Let us know what you plan to bring so we can plan accordingly.</p></div>
+    <div class="form-group"><label>Your Name *</label><input type="text" id="donorName" placeholder="e.g. Maria Garcia"></div>
+    <div class="form-group"><label>Contact (phone or email)</label><input type="text" id="donorContact" placeholder="e.g. 480-555-1234"></div>
+    <div class="form-group"><label>What will you donate? *</label><input type="text" id="donorDesc" placeholder="e.g. bag of Skittles, small bouncy balls, stickers"></div>
+    <div class="form-group"><label>Notes (optional)</label><textarea id="donorNotes" placeholder="e.g. I'll drop off Friday evening"></textarea></div>`;
+
+  document.getElementById('donationModalFooter').innerHTML =
+    `<button class="btn-cancel" onclick="closeModal('donationOverlay')">Cancel</button>
+     <button class="btn-submit" onclick="submitDonation()">I'll Donate!</button>`;
+  openModal('donationOverlay');
+}
+
+async function submitDonation() {
+  const name = document.getElementById('donorName')?.value.trim();
+  const contact = document.getElementById('donorContact')?.value.trim() || '';
+  const desc = document.getElementById('donorDesc')?.value.trim();
+  const notes = document.getElementById('donorNotes')?.value.trim() || '';
+  if (!name || !desc) { alert('Please enter your name and what you plan to donate.'); return; }
+
+  const btn = document.querySelector('#donationModalFooter .btn-submit');
+  btn.textContent = 'Submitting…'; btn.disabled = true;
+  try {
+    await airtablePost('donations', { donor_name: name, event: [currentEventId], contact: contact || undefined, donation_description: desc, notes: notes || undefined, drop_off_completed: false });
+    document.getElementById('donationModalBody').innerHTML = `<div class="success-msg"><div class="success-icon">🎁</div><h3>Thank you, ${esc(name)}!</h3><p>Your donation is logged! Drop off ${esc(desc)} at <strong>Joanne's house on the corner of Bullmoose & Orchid</strong> — look for the blow-up decorations. You're making the egg hunt extra special!</p></div>`;
+    document.getElementById('donationModalFooter').innerHTML = `<button class="btn-submit" onclick="closeModal('donationOverlay')">Done</button>`;
+  } catch(err) { alert('Something went wrong. Please try again.'); btn.textContent = "I'll Donate!"; btn.disabled = false; }
+}
+
+// ─── UTILS ───────────────────────────────────────────────────
+function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+function closeOnOverlay(e, id) { if (e.target.id === id) closeModal(id); }
+function esc(s) { return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+function fmtDate(iso) { return new Date(iso).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'America/Phoenix'}); }
+function fmtTime(iso) { return new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true,timeZone:'America/Phoenix'}); }
+</script>
+</body>
+</html>
