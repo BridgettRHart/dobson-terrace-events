@@ -5,143 +5,157 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="HandheldFriendly" content="true">
 <title>Dobson Terrace — Spring 2026 Events</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --sage: #4a8a4b;
-    --sage-light: #8ab88b;
-    --sage-pale: #e0ede0;
-    --sage-dark: #2C5F2D;
-    --terra: #C4622D;
-    --terra-light: #e0916b;
-    --terra-pale: #faede5;
-    --cream: #F5F0E8;
-    --charcoal: #2c2c2c;
-    --mid-gray: #6b6b6b;
-    --light-gray: #E8DCC8;
-    --border: #d9cfc0;
-    --shadow-sm: 0 2px 8px rgba(44,44,44,0.08);
-    --shadow-md: 0 4px 20px rgba(44,44,44,0.12);
-    --shadow-lg: 0 8px 40px rgba(44,44,44,0.16);
-    --radius: 12px;
-    --radius-sm: 8px;
+    --green:#2C5F2D;--green-mid:#4a8a4b;--green-light:#8ab88b;--green-pale:#e0ede0;
+    --terra:#C4622D;--terra-light:#e0916b;--terra-pale:#faede5;
+    --sand:#F5F0E8;--sand-dark:#E8DCC8;--white:#ffffff;
+    --charcoal:#2c2c2c;--mid-gray:#6b6b6b;--border:#d9cfc0;
+    --shadow-sm:0 2px 8px rgba(44,44,44,0.08);--shadow-md:0 4px 20px rgba(44,44,44,0.12);--shadow-lg:0 8px 40px rgba(44,44,44,0.16);
+    --radius:12px;--radius-sm:8px;
   }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;max-width:100vw;overflow-x:hidden;}
+  body{font-family:'DM Sans',sans-serif;background:var(--sand);color:var(--charcoal);min-height:100vh;max-width:100vw;overflow-x:hidden;}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; max-width: 100vw; overflow-x: hidden; }
-  body { font-family: 'Source Sans 3', sans-serif; background: var(--cream); color: var(--charcoal); min-height: 100vh; max-width: 100vw; overflow-x: hidden; }
+  header{background:var(--green);color:var(--white);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,0.25);padding:0;}
+  .header-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .header-brand{display:flex;align-items:center;gap:1rem;}
+  .header-logo{width:38px;height:38px;background:var(--terra);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+  .header-text h1{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;line-height:1.1;letter-spacing:0.01em;}
+  .header-text p{font-size:0.7rem;opacity:0.65;letter-spacing:0.08em;text-transform:uppercase;}
+  .header-nav{display:flex;gap:0.5rem;align-items:center;}
+  .nav-btn{background:rgba(255,255,255,0.15);color:var(--white);border:1px solid rgba(255,255,255,0.3);padding:0.4rem 0.85rem;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:500;cursor:pointer;text-decoration:none;letter-spacing:0.02em;transition:background 0.2s,transform 0.1s;white-space:nowrap;display:inline-block;}
+  .nav-btn:hover{background:rgba(255,255,255,0.25);transform:translateY(-1px);}
 
-  header { background: var(--sage-dark); color: white; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.25); padding: 0; }
-  .header-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  .header-brand { display: flex; align-items: center; gap: 1rem; }
-  .header-logo { width: 38px; height: 38px; background: var(--terra); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
-  .header-text h1 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; line-height: 1.1; letter-spacing: 0.01em; }
-  .header-text p { font-size: 0.7rem; opacity: 0.65; letter-spacing: 0.08em; text-transform: uppercase; }
-  .header-links { display: flex; gap: 0.5rem; align-items: center; flex-wrap: nowrap; }
-  .header-link { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 0.4rem 0.85rem; border-radius: 4px; font-size: 0.72rem; font-weight: 500; cursor: pointer; font-family: inherit; text-decoration: none; letter-spacing: 0.02em; transition: background 0.2s, transform 0.1s; white-space: nowrap; display: inline-block; }
-  .header-link:hover { background: rgba(255,255,255,0.25); transform: translateY(-1px); }
+  .hero{background:linear-gradient(135deg,var(--green) 0%,var(--green-mid) 100%);color:var(--white);padding:48px 24px;text-align:center;}
+  .hero-inner{max-width:700px;margin:0 auto;}
+  .hero-season{display:inline-block;background:var(--terra);color:var(--white);padding:5px 16px;border-radius:20px;font-size:0.82rem;font-weight:600;margin-bottom:16px;letter-spacing:0.5px;text-transform:uppercase;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;line-height:1.2;margin-bottom:12px;}
+  .hero p{font-size:1rem;opacity:0.88;line-height:1.7;font-weight:300;}
 
-  .hero { background: linear-gradient(135deg, var(--sage-dark) 0%, var(--sage) 100%); color: white; padding: 48px 24px; text-align: center; }
-  .hero-inner { max-width: 700px; margin: 0 auto; }
-  .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
-  .hero p { font-size: 1.05rem; opacity: 0.88; line-height: 1.65; font-weight: 300; }
-  .hero-season { display: inline-block; background: var(--terra); color: white; padding: 5px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; margin-bottom: 16px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .voice-banner{display:block;background:var(--terra);color:var(--white);text-align:center;padding:13px 24px;font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:600;text-decoration:none;transition:background 0.2s;}
+  .voice-banner:hover{background:#a34d21;}
 
-  .main { max-width: 1100px; margin: 0 auto; padding: 40px 24px; }
-  .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--terra); margin-bottom: 6px; }
-  .section-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--charcoal); margin-bottom: 24px; }
+  .main{max-width:1200px;margin:0 auto;padding:32px 24px;}
+  .section-eyebrow{font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--terra);margin-bottom:6px;}
+  .section-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:20px;}
 
-  .events-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; margin-bottom: 48px; }
-  .event-card { background: white; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow-sm); overflow: hidden; transition: all 0.2s; display: flex; flex-direction: column; }
-  .event-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); border-color: var(--sage-light); }
-  .event-card-top { height: 6px; }
-  .color-egg { background: linear-gradient(90deg, #f9a8d4, #c084fc); }
-  .color-hunt { background: linear-gradient(90deg, #6ee7b7, #3b82f6); }
-  .color-garage { background: linear-gradient(90deg, #fbbf24, #f59e0b); }
-  .color-movie { background: linear-gradient(90deg, #93c5fd, #6366f1); }
-  .color-prep { background: linear-gradient(90deg, var(--sage-light), var(--sage)); }
-  .color-volunteer { background: linear-gradient(90deg, var(--terra-light), var(--terra)); }
-  .event-card-body { padding: 20px; flex: 1; }
-  .event-type-tag { display: inline-flex; align-items: center; gap: 5px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--mid-gray); margin-bottom: 10px; }
-  .event-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; line-height: 1.3; }
-  .event-meta { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
-  .event-meta-row { display: flex; align-items: flex-start; gap: 8px; font-size: 0.85rem; color: var(--mid-gray); }
-  .event-meta-icon { flex-shrink: 0; margin-top: 1px; }
-  .event-desc { font-size: 0.88rem; line-height: 1.6; color: var(--charcoal); }
-  .event-card-footer { padding: 14px 20px; background: var(--cream); border-top: 1px solid var(--border); display: flex; gap: 8px; flex-wrap: wrap; }
-  .btn-rsvp { background: var(--sage-dark); color: white; border: none; padding: 9px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.15s; flex: 1; text-align: center; }
-  .btn-rsvp:hover { background: #2d4a2d; }
-  .btn-volunteer { background: var(--terra); color: white; border: none; padding: 9px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.15s; flex: 1; text-align: center; }
-  .btn-volunteer:hover { background: #b05f3a; }
-  .btn-donate { background: white; color: var(--sage-dark); border: 2px solid var(--sage); padding: 8px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.15s; flex: 1; text-align: center; }
-  .btn-donate:hover { background: var(--sage-pale); }
+  .events-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px;margin-bottom:48px;}
+  .event-card{background:var(--white);border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow-sm);overflow:hidden;transition:all 0.2s;display:flex;flex-direction:column;}
+  .event-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
+  .event-top{height:6px;}
+  .color-egg{background:linear-gradient(90deg,#f9a8d4,#c084fc);}
+  .color-hunt{background:linear-gradient(90deg,#6ee7b7,#3b82f6);}
+  .color-garage{background:linear-gradient(90deg,#fbbf24,#f59e0b);}
+  .color-movie{background:linear-gradient(90deg,#93c5fd,#6366f1);}
+  .color-prep{background:linear-gradient(90deg,var(--green-light),var(--green));}
+  .color-volunteer{background:linear-gradient(90deg,var(--terra-light),var(--terra));}
+  .event-body{padding:20px;flex:1;}
+  .event-type-tag{display:inline-flex;align-items:center;gap:5px;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:var(--mid-gray);margin-bottom:10px;}
+  .event-name{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:10px;line-height:1.3;}
+  .event-meta{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+  .event-meta-row{display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:var(--mid-gray);}
+  .event-desc{font-size:0.88rem;line-height:1.6;}
+  .event-footer{padding:14px 20px;background:var(--sand);border-top:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;}
+  .btn-rsvp{background:var(--green);color:var(--white);border:none;padding:9px 18px;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.15s;flex:1;text-align:center;}
+  .btn-rsvp:hover{background:#1e4a1f;}
+  .btn-volunteer{background:var(--terra);color:var(--white);border:none;padding:9px 18px;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.15s;flex:1;text-align:center;}
+  .btn-volunteer:hover{background:#a34d21;}
+  .btn-donate{background:var(--white);color:var(--green);border:2px solid var(--green);padding:8px 18px;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.15s;flex:1;text-align:center;}
+  .btn-donate:hover{background:var(--green-pale);}
 
-  .loading-state { text-align: center; padding: 60px 20px; color: var(--mid-gray); grid-column: 1/-1; }
-  .spinner { width: 36px; height: 36px; border: 3px solid var(--border); border-top-color: var(--sage); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .empty-state { text-align: center; padding: 60px 20px; color: var(--mid-gray); grid-column: 1/-1; }
-  .empty-icon { font-size: 3rem; margin-bottom: 16px; }
+  .loading-state{text-align:center;padding:60px 20px;color:var(--mid-gray);grid-column:1/-1;}
+  .spinner{width:36px;height:36px;border:3px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .empty-state{text-align:center;padding:60px 20px;color:var(--mid-gray);grid-column:1/-1;}
 
-  .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 200; display: flex; align-items: flex-end; justify-content: center; padding: 0; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
-  .overlay.open { opacity: 1; pointer-events: all; }
-  .modal { background: white; border-radius: var(--radius) var(--radius) 0 0; width: 100%; max-width: 560px; max-height: 92vh; overflow-y: auto; box-shadow: var(--shadow-lg); transform: translateY(30px); transition: transform 0.25s; }
-  .overlay.open .modal { transform: translateY(0); }
-  .modal-header { padding: 22px 24px 16px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; background: white; z-index: 10; }
-  .modal-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; }
-  .modal-close { width: 32px; height: 32px; border: none; background: var(--light-gray); border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; color: var(--mid-gray); transition: background 0.15s; flex-shrink: 0; }
-  .modal-close:hover { background: var(--border); }
-  .modal-body { padding: 22px 24px; }
-  .modal-footer { padding: 16px 24px; border-top: 1px solid var(--border); display: flex; gap: 10px; justify-content: flex-end; position: sticky; bottom: 0; background: white; }
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.2s;}
+  .overlay.open{opacity:1;pointer-events:all;}
+  .modal{background:var(--white);border-radius:var(--radius);width:100%;max-width:580px;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg);transform:translateY(20px);transition:transform 0.25s;}
+  .overlay.open .modal{transform:translateY(0);}
+  .modal-header{padding:22px 24px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:var(--white);z-index:10;}
+  .modal-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;}
+  .modal-close{width:32px;height:32px;border:none;background:var(--sand-dark);border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;color:var(--mid-gray);flex-shrink:0;}
+  .modal-close:hover{background:var(--border);}
+  .modal-body{padding:22px 24px;}
+  .modal-footer{padding:16px 24px;border-top:1px solid var(--border);display:flex;gap:10px;justify-content:flex-end;position:sticky;bottom:0;background:var(--white);}
 
-  .form-group { margin-bottom: 18px; }
-  label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
-  .form-hint { font-size: 0.78rem; color: var(--mid-gray); margin-top: 4px; }
-  input[type="text"], input[type="email"], input[type="tel"], input[type="number"], textarea, select { width: 100%; padding: 11px 14px; border: 1.5px solid var(--border); border-radius: var(--radius-sm); font-family: inherit; font-size: 1rem; color: var(--charcoal); background: white; transition: border-color 0.15s; outline: none; -webkit-appearance: none; }
-  input:focus, textarea:focus, select:focus { border-color: var(--sage); }
-  textarea { resize: vertical; min-height: 80px; }
+  .form-group{margin-bottom:18px;}
+  label{display:block;font-size:0.85rem;font-weight:600;margin-bottom:6px;}
+  .form-hint{font-size:0.78rem;color:var(--mid-gray);margin-top:4px;}
+  input[type="text"],input[type="password"],input[type="date"],input[type="time"],textarea,select{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:1rem;color:var(--charcoal);background:var(--white);transition:border-color 0.15s;outline:none;-webkit-appearance:none;}
+  input:focus,textarea:focus,select:focus{border-color:var(--green);}
+  textarea{resize:vertical;min-height:80px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 
-  .info-box { background: var(--sage-pale); border: 1px solid var(--sage-light); border-radius: 8px; padding: 12px 14px; font-size: 0.83rem; color: var(--sage-dark); margin-bottom: 18px; line-height: 1.55; }
-  .event-preview { background: var(--cream); border: 1px solid var(--border); border-radius: 8px; padding: 14px; margin-bottom: 18px; }
-  .event-preview h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 4px; }
-  .event-preview p { font-size: 0.82rem; color: var(--mid-gray); }
-  .donation-info { background: var(--sage-pale); border-radius: 10px; padding: 16px; margin-bottom: 18px; }
-  .donation-info h4 { font-family: 'Playfair Display', serif; font-size: 1rem; margin-bottom: 6px; color: var(--sage-dark); }
-  .donation-info p { font-size: 0.85rem; color: var(--sage-dark); line-height: 1.55; }
+  .info-box{background:var(--green-pale);border:1px solid var(--green-light);border-radius:8px;padding:12px 14px;font-size:0.83rem;color:var(--green);margin-bottom:16px;line-height:1.55;}
+  .info-box.terra{background:var(--terra-pale);border-color:var(--terra-light);color:#7a3a20;}
+  .event-preview{background:var(--sand);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:18px;}
+  .event-preview h4{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:4px;}
+  .event-preview p{font-size:0.82rem;color:var(--mid-gray);}
+  .donation-info{background:var(--green-pale);border-radius:10px;padding:16px;margin-bottom:18px;}
+  .donation-info h4{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:6px;color:var(--green);}
+  .donation-info p{font-size:0.85rem;color:var(--green);line-height:1.55;}
 
-  .btn-cancel { background: white; color: var(--mid-gray); border: 1.5px solid var(--border); padding: 10px 20px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; cursor: pointer; font-family: inherit; }
-  .btn-submit { background: var(--sage-dark); color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-  .btn-submit:hover { background: #2d4a2d; }
-  .btn-submit.terra { background: var(--terra); }
-  .btn-submit.terra:hover { background: #b05f3a; }
-  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+  .btn-cancel{background:var(--white);color:var(--mid-gray);border:1.5px solid var(--border);padding:10px 20px;border-radius:8px;font-size:0.88rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;}
+  .btn-submit{background:var(--green);color:var(--white);border:none;padding:10px 24px;border-radius:8px;font-size:0.88rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.15s;}
+  .btn-submit:hover{background:#1e4a1f;}
+  .btn-submit.terra{background:var(--terra);}
+  .btn-submit.terra:hover{background:#a34d21;}
+  .btn-submit:disabled{opacity:0.6;cursor:not-allowed;}
+  .success-msg{text-align:center;padding:24px 16px;}
+  .success-icon{font-size:3rem;margin-bottom:12px;}
+  .success-msg h3{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:8px;}
+  .success-msg p{font-size:0.9rem;color:var(--mid-gray);line-height:1.6;}
 
-  .success-msg { text-align: center; padding: 24px 16px; }
-  .success-icon { font-size: 3rem; margin-bottom: 12px; }
-  .success-msg h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 8px; }
-  .success-msg p { font-size: 0.9rem; color: var(--mid-gray); line-height: 1.6; }
+  /* ADMIN */
+  .admin-login{max-width:380px;margin:0 auto;text-align:center;}
+  .admin-login h3{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:6px;}
+  .admin-login p{font-size:0.85rem;color:var(--mid-gray);margin-bottom:20px;}
+  .admin-tabs{display:flex;border-bottom:2px solid var(--border);margin-bottom:24px;overflow-x:auto;}
+  .admin-tab{padding:10px 16px;border:none;background:none;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:600;color:var(--mid-gray);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all 0.15s;white-space:nowrap;flex-shrink:0;}
+  .admin-tab.active{color:var(--green);border-bottom-color:var(--green);}
+  .admin-row{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin-bottom:12px;}
+  .admin-row h4{font-family:'Playfair Display',serif;font-size:0.95rem;margin-bottom:8px;}
+  .btn-edit{background:var(--white);color:var(--green);border:1.5px solid var(--green);padding:5px 12px;border-radius:6px;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;}
+  .btn-edit:hover{background:var(--green-pale);}
+  .btn-hide{background:var(--white);color:var(--mid-gray);border:1.5px solid var(--border);padding:5px 12px;border-radius:6px;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;}
+  .btn-hide:hover{background:var(--sand);}
+  .btn-danger{background:var(--white);color:#c62828;border:1px solid #ffcdd2;padding:5px 12px;border-radius:6px;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;}
+  .btn-danger:hover{background:#ffebee;}
+  .rsvp-summary{background:var(--sand);border-radius:6px;padding:10px 12px;font-size:0.82rem;margin-top:8px;}
+  .survey-toggle{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);}
+  .toggle{position:relative;width:44px;height:24px;flex-shrink:0;}
+  .toggle input{opacity:0;width:0;height:0;}
+  .toggle-slider{position:absolute;inset:0;background:#ccc;border-radius:12px;cursor:pointer;transition:0.2s;}
+  .toggle-slider:before{content:'';position:absolute;height:18px;width:18px;left:3px;bottom:3px;background:var(--white);border-radius:50%;transition:0.2s;}
+  .toggle input:checked+.toggle-slider{background:var(--green);}
+  .toggle input:checked+.toggle-slider:before{transform:translateX(20px);}
 
-  footer { background: var(--sage-dark); color: rgba(255,255,255,0.7); text-align: center; padding: 24px; font-size: 0.8rem; line-height: 1.6; margin-top: 48px; }
-  footer p { max-width: 700px; margin: 0 auto; }
-  footer a { color: var(--sage-light); }
-  footer strong { color: white; }
+  footer{background:var(--green);color:rgba(255,255,255,0.7);text-align:center;padding:24px;font-size:0.8rem;line-height:1.6;margin-top:48px;font-family:'DM Sans',sans-serif;}
+  footer p{max-width:700px;margin:0 auto;}
+  footer a{color:var(--green-light);}
+  footer strong{color:var(--white);}
 
-  @media (max-width: 640px) {
-    .header-inner { padding: 0 1rem; }
-    .header-text h1 { font-size: 0.95rem; }
-    .header-text p { display: none; }
-    .header-logo { width: 32px; height: 32px; font-size: 15px; }
-    .header-link { font-size: 0.65rem; padding: 0.35rem 0.55rem; }
-    .hero { padding: 32px 16px; }
-    .hero h1 { font-size: 1.7rem; }
-    .hero p { font-size: 0.95rem; }
-    .main { padding: 24px 16px; }
-    .events-grid { grid-template-columns: 1fr; gap: 16px; }
-    .event-card-footer { flex-direction: column; }
-    .btn-rsvp, .btn-volunteer, .btn-donate { width: 100%; }
-    .modal-header { padding: 18px 18px 14px; }
-    .modal-body { padding: 16px 18px; }
-    .modal-footer { padding: 14px 18px; flex-direction: column-reverse; }
-    .modal-footer .btn-submit, .modal-footer .btn-cancel { width: 100%; text-align: center; padding: 13px; }
+  @media(max-width:640px){
+    .header-inner{padding:0 1rem;}
+    .header-text h1{font-size:0.95rem;}
+    .header-text p{display:none;}
+    .header-logo{width:32px;height:32px;font-size:15px;}
+    .nav-btn{font-size:0.65rem;padding:0.35rem 0.55rem;}
+    .hero{padding:32px 16px;}
+    .hero h1{font-size:1.7rem;}
+    .main{padding:24px 16px;}
+    .events-grid{grid-template-columns:1fr;gap:16px;}
+    .event-footer{flex-direction:column;}
+    .btn-rsvp,.btn-volunteer,.btn-donate{width:100%;}
+    .overlay{padding:0;align-items:flex-end;}
+    .modal{max-width:100%;border-radius:var(--radius) var(--radius) 0 0;max-height:92vh;}
+    .modal-footer{flex-direction:column-reverse;}
+    .modal-footer .btn-submit,.modal-footer .btn-cancel{width:100%;text-align:center;padding:13px;}
+    .form-row{grid-template-columns:1fr;}
   }
 </style>
 </head>
@@ -156,12 +170,16 @@
         <p>Spring 2026 Events</p>
       </div>
     </div>
-    <div class="header-links">
-      <a href="https://tinyurl.com/DobsonTerracePlants" target="_blank" class="header-link">🌿 Plant Guide</a>
-      <a href="https://tinyurl.com/DobsonTerraceHelpBoard" target="_blank" class="header-link">🤝 Help Board</a>
+    <div class="header-nav">
+      <a href="https://tinyurl.com/DobsonTerraceVoice" target="_blank" class="nav-btn">📣 Community Voice</a>
+      <button class="nav-btn" onclick="openAdminModal()">🔐 Coordinator</button>
     </div>
   </div>
 </header>
+
+<a href="https://tinyurl.com/DobsonTerraceVoice" target="_blank" class="voice-banner">
+  📣 Community Voice — Active surveys open now! Share your feedback →
+</a>
 
 <div class="hero">
   <div class="hero-inner">
@@ -171,12 +189,8 @@
   </div>
 </div>
 
-<a href="https://tinyurl.com/DobsonTerraceVoice" target="_blank" style="display:block;background:var(--terra);color:white;text-align:center;padding:13px 24px;font-family:inherit;font-size:0.9rem;font-weight:600;text-decoration:none;letter-spacing:0.2px;transition:background 0.2s" onmouseover="this.style.background='#a34d21'" onmouseout="this.style.background='var(--terra)'">
-  📣 Community Voice — We want to hear from you! &nbsp;→
-</a>
-
 <div class="main">
-  <div class="section-label">Upcoming</div>
+  <div class="section-eyebrow">Upcoming</div>
   <div class="section-title">Spring Events</div>
   <div class="events-grid" id="eventsGrid">
     <div class="loading-state"><div class="spinner"></div><p>Loading events…</p></div>
@@ -219,243 +233,489 @@
   </div>
 </div>
 
+<!-- ADMIN MODAL -->
+<div class="overlay" id="adminOverlay" onclick="closeOnOverlay(event,'adminOverlay')">
+  <div class="modal" style="max-width:680px" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title">Coordinator Panel</div>
+      <button class="modal-close" onclick="closeModal('adminOverlay')">✕</button>
+    </div>
+    <div class="modal-body" id="adminModalBody"></div>
+  </div>
+</div>
+
+<!-- ADD/EDIT EVENT MODAL -->
+<div class="overlay" id="eventEditOverlay" onclick="closeOnOverlay(event,'eventEditOverlay')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title" id="eventEditTitle">Add Event</div>
+      <button class="modal-close" onclick="closeModal('eventEditOverlay')">✕</button>
+    </div>
+    <div class="modal-body" id="eventEditBody"></div>
+    <div class="modal-footer" id="eventEditFooter"></div>
+  </div>
+</div>
+
+<!-- ADD/EDIT SURVEY MODAL -->
+<div class="overlay" id="surveyEditOverlay" onclick="closeOnOverlay(event,'surveyEditOverlay')">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title" id="surveyEditTitle">Add Survey</div>
+      <button class="modal-close" onclick="closeModal('surveyEditOverlay')">✕</button>
+    </div>
+    <div class="modal-body" id="surveyEditBody"></div>
+    <div class="modal-footer" id="surveyEditFooter"></div>
+  </div>
+</div>
+
 <footer>
   <p>
     <strong>⭐ Dobson Terrace Neighborhood Events</strong><br>
-    These events are community-organized and not official programs of Dobson Terrace HOA or Trestle Property Management.
-    Questions? Contact us at bridgettrhart&#64;gmail&#46;com
+    Community-organized. Not an official program of Dobson Terrace HOA or Trestle Property Management.
+    Questions? Contact bridgettrhart&#64;gmail&#46;com
   </p>
 </footer>
 
 <script>
 const PROXY = 'https://airtable-proxy.bridgettrhart.workers.dev';
 const BASE  = 'appqnxeicJxL0v18h';
+const COORDINATOR_PINS = { bridgett: '2442' };
 
 let allEvents = [];
+let allSurveys = [];
 let currentEventId = null;
+let adminSession = null;
+let editingEventId = null;
+let editingSurveyId = null;
 
 const EVENT_CONFIG = {
-  event:           { label: 'Community Event',    icon: '🎉' },
-  prep_meeting:    { label: 'Prep & Volunteers',  icon: '🛠️' },
-  volunteer_shift: { label: 'Volunteer Shift',    icon: '🙋' },
+  event:           { label: 'Community Event',   icon: '🎉' },
+  prep_meeting:    { label: 'Prep & Volunteers', icon: '🛠️' },
+  volunteer_shift: { label: 'Volunteer Shift',   icon: '🙋' },
 };
 
 function getColorClass(e) {
-  const name = (e.event_name || '').toLowerCase();
-  if (name.includes('egg') && name.includes('hunt')) return 'color-hunt';
-  if (name.includes('stuff') || name.includes('volunteer')) return 'color-volunteer';
-  if (name.includes('garage') || name.includes('sale')) return 'color-garage';
+  const name = (e.event_name||'').toLowerCase();
+  if (name.includes('egg')&&name.includes('hunt')) return 'color-hunt';
+  if (name.includes('stuff')||name.includes('volunteer')) return 'color-volunteer';
+  if (name.includes('garage')||name.includes('sale')) return 'color-garage';
   if (name.includes('movie')) return 'color-movie';
-  if (name.includes('easter') || name.includes('egg')) return 'color-egg';
+  if (name.includes('easter')||name.includes('egg')) return 'color-egg';
   return 'color-prep';
 }
 
-async function airtable(path, method = 'GET', body = null) {
-  const opts = { method, headers: { 'Content-Type': 'application/json' } };
-  if (body) opts.body = JSON.stringify(body);
-  const res = await fetch(`${PROXY}/${BASE}/${path}`, opts);
+async function api(path, method='GET', body=null) {
+  const opts={method,headers:{'Content-Type':'application/json'}};
+  if(body) opts.body=JSON.stringify(body);
+  const res=await fetch(`${PROXY}/${BASE}/${path}`,opts);
+  return res.json();
+}
+async function apiPost(table,fields){return api(table,'POST',{records:[{fields}]});}
+async function apiPatch(table,id,fields){
+  const opts={method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({records:[{id,fields}]})};
+  const res=await fetch(`${PROXY}/${BASE}/${encodeURIComponent(table)}`,opts);
   return res.json();
 }
 
-async function airtablePost(table, fields) {
-  return airtable(table, 'POST', { records: [{ fields }] });
-}
-
-async function loadEvents() {
+async function loadAll() {
   try {
-    console.log('Fetching from:', `${PROXY}/${BASE}/events`);
-    const res = await fetch(`${PROXY}/${BASE}/events`);
-    console.log('Response status:', res.status);
-    const data = await res.json();
-    console.log('Data received:', JSON.stringify(data).slice(0, 200));
-    allEvents = (data.records || []).map(r => ({ id: r.id, ...r.fields }));
-    console.log('Events mapped:', allEvents.length);
-    allEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
+    const [evData,survData]=await Promise.all([api('events'),api('surveys')]);
+    allEvents=(evData.records||[]).map(r=>({id:r.id,...r.fields}));
+    allEvents.sort((a,b)=>new Date(a.date)-new Date(b.date));
+    allSurveys=(survData.records||[]).map(r=>({id:r.id,...r.fields}));
     renderEvents();
   } catch(e) {
-    console.error('Load events error:', e);
-    document.getElementById('eventsGrid').innerHTML =
-      `<div class="empty-state"><div class="empty-icon">⚠️</div><p>Could not load events. Please refresh.</p></div>`;
+    document.getElementById('eventsGrid').innerHTML=
+      `<div class="empty-state"><p>Could not load events. Please refresh.</p></div>`;
   }
 }
+loadAll();
 
 function renderEvents() {
-  const grid = document.getElementById('eventsGrid');
-  const now = new Date(Date.now() - 86400000);
-  const upcoming = allEvents.filter(e => new Date(e.date) >= now);
-
-  if (!upcoming.length) {
-    grid.innerHTML = `<div class="empty-state"><div class="empty-icon">🌱</div><p>No upcoming events right now. Check back soon!</p></div>`;
+  const grid=document.getElementById('eventsGrid');
+  const now=new Date(Date.now()-86400000);
+  const upcoming=allEvents.filter(e=>new Date(e.date)>=now&&e.event_type!=='hidden');
+  if(!upcoming.length){
+    grid.innerHTML=`<div class="empty-state"><p>No upcoming events right now. Check back soon!</p></div>`;
     return;
   }
-
-  grid.innerHTML = upcoming.map(e => {
-    const cfg = EVENT_CONFIG[e.event_type] || EVENT_CONFIG.event;
-    const colorClass = getColorClass(e);
-    const buttons = [];
-    if (e.accepts_rsvp)       buttons.push(`<button class="btn-rsvp" onclick="openRsvp('${e.id}')">📋 RSVP</button>`);
-    if (e.accepts_volunteers)  buttons.push(`<button class="btn-volunteer" onclick="openVolunteer('${e.id}')">🙋 Volunteer</button>`);
-    if (e.accepts_donations)   buttons.push(`<button class="btn-donate" onclick="openDonation('${e.id}')">🎁 Donate</button>`);
-
+  grid.innerHTML=upcoming.map(e=>{
+    const cfg=EVENT_CONFIG[e.event_type]||EVENT_CONFIG.event;
+    const colorClass=getColorClass(e);
+    const buttons=[];
+    if(e.accepts_rsvp) buttons.push(`<button class="btn-rsvp" onclick="openRsvp('${e.id}')">📋 RSVP</button>`);
+    if(e.accepts_volunteers) buttons.push(`<button class="btn-volunteer" onclick="openVolunteer('${e.id}')">🙋 Volunteer</button>`);
+    if(e.accepts_donations) buttons.push(`<button class="btn-donate" onclick="openDonation('${e.id}')">🎁 Donate</button>`);
     return `<div class="event-card">
-      <div class="event-card-top ${colorClass}"></div>
-      <div class="event-card-body">
+      <div class="event-top ${colorClass}"></div>
+      <div class="event-body">
         <div class="event-type-tag">${cfg.icon} ${cfg.label}</div>
         <div class="event-name">${esc(e.event_name)}</div>
         <div class="event-meta">
-          <div class="event-meta-row"><span class="event-meta-icon">📅</span><span>${fmtDate(e.date)} at ${fmtTime(e.date)}</span></div>
-          <div class="event-meta-row"><span class="event-meta-icon">📍</span><span>${esc(e.location || 'TBD')}</span></div>
+          <div class="event-meta-row"><span>📅</span><span>${fmtDate(e.date)} at ${fmtTime(e.date)}</span></div>
+          <div class="event-meta-row"><span>📍</span><span>${esc(e.location||'TBD')}</span></div>
         </div>
-        <div class="event-desc">${esc(e.description || '')}</div>
+        <div class="event-desc">${esc(e.description||'')}</div>
       </div>
-      ${buttons.length ? `<div class="event-card-footer">${buttons.join('')}</div>` : ''}
+      ${buttons.length?`<div class="event-footer">${buttons.join('')}</div>`:''}
     </div>`;
   }).join('');
 }
 
-// ─── RSVP ────────────────────────────────────────────────────
+// ─── RSVP ──────────────────────────────────────────────────
 function openRsvp(id) {
-  const e = allEvents.find(x => x.id === id);
-  if (!e) return;
-  currentEventId = id;
-  const isEaster = e.event_name.toLowerCase().includes('egg hunt');
-  const isGarage = e.event_name.toLowerCase().includes('garage');
-
-  document.getElementById('rsvpModalTitle').textContent = `RSVP — ${e.event_name}`;
-  document.getElementById('rsvpModalBody').innerHTML = `
-    <div class="event-preview">
-      <h4>${esc(e.event_name)}</h4>
-      <p>📅 ${fmtDate(e.date)} at ${fmtTime(e.date)} &nbsp;|&nbsp; 📍 ${esc(e.location||'TBD')}</p>
-    </div>
+  const e=allEvents.find(x=>x.id===id); if(!e)return;
+  currentEventId=id;
+  const isEaster=e.event_name.toLowerCase().includes('egg hunt');
+  const isGarage=e.event_name.toLowerCase().includes('garage');
+  document.getElementById('rsvpModalTitle').textContent=`RSVP — ${e.event_name}`;
+  document.getElementById('rsvpModalBody').innerHTML=`
+    <div class="event-preview"><h4>${esc(e.event_name)}</h4><p>📅 ${fmtDate(e.date)} at ${fmtTime(e.date)} | 📍 ${esc(e.location||'TBD')}</p></div>
     <div class="form-group"><label>Your Name *</label><input type="text" id="rsvpName" placeholder="e.g. Maria Garcia"></div>
     <div class="form-group"><label>Contact (phone or email) *</label><input type="text" id="rsvpContact" placeholder="e.g. 480-555-1234"></div>
-    <div class="form-group"><label>How many people in your group? *</label><input type="number" id="rsvpPartySize" min="1" max="20" value="1"></div>
-    ${isEaster ? `<div class="form-group"><label>Kids' ages (helps us plan egg count!)</label><input type="text" id="rsvpKidsAges" placeholder="e.g. 3, 7, 10"></div>` : ''}
-    ${isGarage ? `
-    <div class="form-group"><label>Your street address *</label><input type="text" id="rsvpAddress" placeholder="e.g. 2441 W Orchid Ln"><div class="form-hint">Needed so Dobson Ranch can include you on their community map!</div></div>
-    <div class="form-group"><label>What will you be selling?</label><input type="text" id="rsvpSelling" placeholder="e.g. furniture, kids clothes, handmade jewelry"></div>` : ''}
+    <div class="form-group"><label>How many in your group? *</label><input type="text" id="rsvpPartySize" placeholder="e.g. 2"></div>
+    ${isEaster?`<div class="form-group"><label>Kids' ages (helps us plan egg count!)</label><input type="text" id="rsvpKidsAges" placeholder="e.g. 3, 7, 10"></div>`:''}
+    ${isGarage?`<div class="form-group"><label>Your street address *</label><input type="text" id="rsvpAddress" placeholder="e.g. 2441 W Orchid Ln"><div class="form-hint">Needed for Dobson Ranch community map!</div></div>
+    <div class="form-group"><label>What will you be selling?</label><input type="text" id="rsvpSelling" placeholder="e.g. furniture, kids clothes"></div>`:''}
     <div class="form-group"><label>Notes (optional)</label><textarea id="rsvpNotes" placeholder="Anything we should know?"></textarea></div>`;
-
-  document.getElementById('rsvpModalFooter').innerHTML =
+  document.getElementById('rsvpModalFooter').innerHTML=
     `<button class="btn-cancel" onclick="closeModal('rsvpOverlay')">Cancel</button>
      <button class="btn-submit" onclick="submitRsvp()">Submit RSVP</button>`;
   openModal('rsvpOverlay');
 }
 
 async function submitRsvp() {
-  const e = allEvents.find(x => x.id === currentEventId);
-  const name = document.getElementById('rsvpName')?.value.trim();
-  const contact = document.getElementById('rsvpContact')?.value.trim();
-  const partySize = parseInt(document.getElementById('rsvpPartySize')?.value) || 1;
-  const kidsAges = document.getElementById('rsvpKidsAges')?.value.trim() || '';
-  const address = document.getElementById('rsvpAddress')?.value.trim() || '';
-  const selling = document.getElementById('rsvpSelling')?.value.trim() || '';
-  const notes = document.getElementById('rsvpNotes')?.value.trim() || '';
-  if (!name || !contact) { alert('Please enter your name and contact info.'); return; }
-
-  const btn = document.querySelector('#rsvpModalFooter .btn-submit');
-  btn.textContent = 'Submitting…'; btn.disabled = true;
+  const e=allEvents.find(x=>x.id===currentEventId);
+  const name=document.getElementById('rsvpName')?.value.trim();
+  const contact=document.getElementById('rsvpContact')?.value.trim();
+  const partySize=document.getElementById('rsvpPartySize')?.value.trim()||'1';
+  const kidsAges=document.getElementById('rsvpKidsAges')?.value.trim()||'';
+  const address=document.getElementById('rsvpAddress')?.value.trim()||'';
+  const selling=document.getElementById('rsvpSelling')?.value.trim()||'';
+  const notes=document.getElementById('rsvpNotes')?.value.trim()||'';
+  if(!name||!contact){alert('Please enter your name and contact info.');return;}
+  const btn=document.querySelector('#rsvpModalFooter .btn-submit');
+  btn.textContent='Submitting…';btn.disabled=true;
   try {
-    const noteParts = [kidsAges ? `Ages: ${kidsAges}` : '', address ? `Address: ${address}` : '', selling ? `Selling: ${selling}` : '', notes].filter(Boolean);
-    await airtablePost('rsvps', { full_name: name, event: [currentEventId], contact, party_size: partySize, kids_ages: kidsAges || undefined, notes: noteParts.join('\n') || undefined });
-    document.getElementById('rsvpModalBody').innerHTML = `<div class="success-msg"><div class="success-icon">🎉</div><h3>You're in, ${esc(name)}!</h3><p>We've got you down for ${esc(e.event_name)}. See you there!</p></div>`;
-    document.getElementById('rsvpModalFooter').innerHTML = `<button class="btn-submit" onclick="closeModal('rsvpOverlay')">Done</button>`;
-  } catch(err) { alert('Something went wrong. Please try again.'); btn.textContent = 'Submit RSVP'; btn.disabled = false; }
+    const noteParts=[kidsAges?`Ages: ${kidsAges}`:'',address?`Address: ${address}`:'',selling?`Selling: ${selling}`:'',notes].filter(Boolean);
+    await apiPost('rsvps',{full_name:name,event:[currentEventId],contact,party_size:parseInt(partySize)||1,kids_ages:kidsAges||undefined,notes:noteParts.join('\n')||undefined});
+    document.getElementById('rsvpModalBody').innerHTML=`<div class="success-msg"><div class="success-icon">🎉</div><h3>You're in, ${esc(name)}!</h3><p>We've got you down for ${esc(e.event_name)}. See you there!</p></div>`;
+    document.getElementById('rsvpModalFooter').innerHTML=`<button class="btn-submit" onclick="closeModal('rsvpOverlay')">Done</button>`;
+  } catch(err){alert('Something went wrong. Please try again.');btn.textContent='Submit RSVP';btn.disabled=false;}
 }
 
-// ─── VOLUNTEER ────────────────────────────────────────────────
+// ─── VOLUNTEER ─────────────────────────────────────────────
 function openVolunteer(id) {
-  const e = allEvents.find(x => x.id === id);
-  if (!e) return;
-  currentEventId = id;
-  const isEggStuffing = e.event_name.toLowerCase().includes('stuff');
-
-  document.getElementById('volunteerModalTitle').textContent = `Volunteer — ${e.event_name}`;
-  document.getElementById('volunteerModalBody').innerHTML = `
-    <div class="event-preview">
-      <h4>${esc(e.event_name)}</h4>
-      <p>📅 ${fmtDate(e.date)} at ${fmtTime(e.date)} &nbsp;|&nbsp; 📍 ${esc(e.location||'TBD')}</p>
-    </div>
-    ${isEggStuffing ? `<div class="donation-info"><h4>🎁 Can you bring supplies?</h4><p>We're collecting candy and small toys to stuff in the eggs. Drop-offs welcome at <strong>Joanne's house on the corner of Bullmoose & Orchid</strong> — look for the blow-up decorations!</p></div>` : ''}
+  const e=allEvents.find(x=>x.id===id); if(!e)return;
+  currentEventId=id;
+  const isEggStuffing=e.event_name.toLowerCase().includes('stuff');
+  document.getElementById('volunteerModalTitle').textContent=`Volunteer — ${e.event_name}`;
+  document.getElementById('volunteerModalBody').innerHTML=`
+    <div class="event-preview"><h4>${esc(e.event_name)}</h4><p>📅 ${fmtDate(e.date)} at ${fmtTime(e.date)} | 📍 ${esc(e.location||'TBD')}</p></div>
+    ${isEggStuffing?`<div class="donation-info"><h4>🎁 Can you bring supplies?</h4><p>Drop candy or small toys at <strong>Joanne's house — corner of Bullmoose & Orchid</strong> (look for the blow-up decorations!)</p></div>`:''}
     <div class="form-group"><label>Your Name *</label><input type="text" id="volName" placeholder="e.g. Maria Garcia"></div>
     <div class="form-group"><label>Contact (phone or email) *</label><input type="text" id="volContact" placeholder="e.g. 480-555-1234"></div>
-    <div class="form-group"><label>How many people are you bringing?</label><input type="number" id="volPartySize" min="1" max="10" value="1"></div>
-    ${isEggStuffing ? `
-    <div class="form-group"><label>Will you bring candy or toys to donate?</label>
-      <select id="volCanDonate"><option value="">Select one</option><option value="yes">Yes!</option><option value="no">Not this time</option><option value="maybe">Maybe</option></select></div>
-    <div class="form-group"><label>What will you bring? (optional)</label><input type="text" id="volDonationDesc" placeholder="e.g. bag of Skittles, small bouncy balls"></div>` : ''}
-    <div class="form-group"><label>Notes (optional)</label><textarea id="volNotes" placeholder="Anything we should know?"></textarea></div>`;
-
-  document.getElementById('volunteerModalFooter').innerHTML =
+    <div class="form-group"><label>How many people are you bringing?</label><input type="text" id="volPartySize" placeholder="e.g. 2"></div>
+    <div class="form-group"><label>Notes (optional)</label><textarea id="volNotes" placeholder="e.g. I have tools, I'm free all morning." style="min-height:70px"></textarea></div>`;
+  document.getElementById('volunteerModalFooter').innerHTML=
     `<button class="btn-cancel" onclick="closeModal('volunteerOverlay')">Cancel</button>
      <button class="btn-submit terra" onclick="submitVolunteer()">Sign Me Up!</button>`;
   openModal('volunteerOverlay');
 }
 
 async function submitVolunteer() {
-  const e = allEvents.find(x => x.id === currentEventId);
-  const name = document.getElementById('volName')?.value.trim();
-  const contact = document.getElementById('volContact')?.value.trim();
-  const partySize = parseInt(document.getElementById('volPartySize')?.value) || 1;
-  const canDonate = document.getElementById('volCanDonate')?.value || '';
-  const donationDesc = document.getElementById('volDonationDesc')?.value.trim() || '';
-  const notes = document.getElementById('volNotes')?.value.trim() || '';
-  if (!name || !contact) { alert('Please enter your name and contact info.'); return; }
-
-  const btn = document.querySelector('#volunteerModalFooter .btn-submit');
-  btn.textContent = 'Signing up…'; btn.disabled = true;
+  const e=allEvents.find(x=>x.id===currentEventId);
+  const name=document.getElementById('volName')?.value.trim();
+  const contact=document.getElementById('volContact')?.value.trim();
+  const partySize=document.getElementById('volPartySize')?.value.trim()||'1';
+  const notes=document.getElementById('volNotes')?.value.trim()||'';
+  if(!name||!contact){alert('Please enter your name and contact info.');return;}
+  const btn=document.querySelector('#volunteerModalFooter .btn-submit');
+  btn.textContent='Signing up…';btn.disabled=true;
   try {
-    await airtablePost('volunteers', { full_name: name, event: [currentEventId], contact, party_size: partySize, can_donate: canDonate === 'yes', donation_description: donationDesc || undefined, notes: notes || undefined });
-    document.getElementById('volunteerModalBody').innerHTML = `<div class="success-msg"><div class="success-icon">🙌</div><h3>Thank you, ${esc(name)}!</h3><p>You're signed up to volunteer for ${esc(e.event_name)}. We'll be in touch!</p></div>`;
-    document.getElementById('volunteerModalFooter').innerHTML = `<button class="btn-submit" onclick="closeModal('volunteerOverlay')">Done</button>`;
-  } catch(err) { alert('Something went wrong. Please try again.'); btn.textContent = 'Sign Me Up!'; btn.disabled = false; }
+    await apiPost('volunteers',{full_name:name,event:[currentEventId],contact,party_size:parseInt(partySize)||1,notes:notes||undefined});
+    document.getElementById('volunteerModalBody').innerHTML=`<div class="success-msg"><div class="success-icon">🙌</div><h3>Thank you, ${esc(name)}!</h3><p>You're signed up to volunteer for ${esc(e.event_name)}!</p></div>`;
+    document.getElementById('volunteerModalFooter').innerHTML=`<button class="btn-submit" onclick="closeModal('volunteerOverlay')">Done</button>`;
+  } catch(err){alert('Something went wrong. Please try again.');btn.textContent='Sign Me Up!';btn.disabled=false;}
 }
 
-// ─── DONATION ─────────────────────────────────────────────────
+// ─── DONATION ──────────────────────────────────────────────
 function openDonation(id) {
-  const e = allEvents.find(x => x.id === id);
-  if (!e) return;
-  currentEventId = id;
-
-  document.getElementById('donationModalBody').innerHTML = `
-    <div class="donation-info"><h4>🎁 Drop-off Location</h4><p>Bring candy or small toys to <strong>Joanne's house on the corner of Bullmoose & Orchid</strong> — look for the blow-up decorations! Let us know what you plan to bring so we can plan accordingly.</p></div>
+  const e=allEvents.find(x=>x.id===id); if(!e)return;
+  currentEventId=id;
+  document.getElementById('donationModalBody').innerHTML=`
+    <div class="donation-info"><h4>🎁 Drop-off Location</h4><p>Bring candy or small toys to <strong>Joanne's house — corner of Bullmoose & Orchid</strong> (look for the blow-up decorations!)</p></div>
     <div class="form-group"><label>Your Name *</label><input type="text" id="donorName" placeholder="e.g. Maria Garcia"></div>
     <div class="form-group"><label>Contact (phone or email)</label><input type="text" id="donorContact" placeholder="e.g. 480-555-1234"></div>
-    <div class="form-group"><label>What will you donate? *</label><input type="text" id="donorDesc" placeholder="e.g. bag of Skittles, small bouncy balls, stickers"></div>
+    <div class="form-group"><label>What will you donate? *</label><input type="text" id="donorDesc" placeholder="e.g. bag of Skittles, small bouncy balls"></div>
     <div class="form-group"><label>Notes (optional)</label><textarea id="donorNotes" placeholder="e.g. I'll drop off Friday evening"></textarea></div>`;
-
-  document.getElementById('donationModalFooter').innerHTML =
+  document.getElementById('donationModalFooter').innerHTML=
     `<button class="btn-cancel" onclick="closeModal('donationOverlay')">Cancel</button>
      <button class="btn-submit" onclick="submitDonation()">I'll Donate!</button>`;
   openModal('donationOverlay');
 }
 
 async function submitDonation() {
-  const name = document.getElementById('donorName')?.value.trim();
-  const contact = document.getElementById('donorContact')?.value.trim() || '';
-  const desc = document.getElementById('donorDesc')?.value.trim();
-  const notes = document.getElementById('donorNotes')?.value.trim() || '';
-  if (!name || !desc) { alert('Please enter your name and what you plan to donate.'); return; }
-
-  const btn = document.querySelector('#donationModalFooter .btn-submit');
-  btn.textContent = 'Submitting…'; btn.disabled = true;
+  const name=document.getElementById('donorName')?.value.trim();
+  const contact=document.getElementById('donorContact')?.value.trim()||'';
+  const desc=document.getElementById('donorDesc')?.value.trim();
+  const notes=document.getElementById('donorNotes')?.value.trim()||'';
+  if(!name||!desc){alert('Please enter your name and what you plan to donate.');return;}
+  const btn=document.querySelector('#donationModalFooter .btn-submit');
+  btn.textContent='Submitting…';btn.disabled=true;
   try {
-    await airtablePost('donations', { donor_name: name, event: [currentEventId], contact: contact || undefined, donation_description: desc, notes: notes || undefined, drop_off_completed: false });
-    document.getElementById('donationModalBody').innerHTML = `<div class="success-msg"><div class="success-icon">🎁</div><h3>Thank you, ${esc(name)}!</h3><p>Your donation is logged! Drop off ${esc(desc)} at <strong>Joanne's house on the corner of Bullmoose & Orchid</strong> — look for the blow-up decorations. You're making the egg hunt extra special!</p></div>`;
-    document.getElementById('donationModalFooter').innerHTML = `<button class="btn-submit" onclick="closeModal('donationOverlay')">Done</button>`;
-  } catch(err) { alert('Something went wrong. Please try again.'); btn.textContent = "I'll Donate!"; btn.disabled = false; }
+    await apiPost('donations',{donor_name:name,event:[currentEventId],contact:contact||undefined,donation_description:desc,notes:notes||undefined,drop_off_completed:false});
+    document.getElementById('donationModalBody').innerHTML=`<div class="success-msg"><div class="success-icon">🎁</div><h3>Thank you, ${esc(name)}!</h3><p>Drop off ${esc(desc)} at Joanne's house on the corner of Bullmoose & Orchid!</p></div>`;
+    document.getElementById('donationModalFooter').innerHTML=`<button class="btn-submit" onclick="closeModal('donationOverlay')">Done</button>`;
+  } catch(err){alert('Something went wrong. Please try again.');btn.textContent="I'll Donate!";btn.disabled=false;}
 }
 
-// ─── UTILS ───────────────────────────────────────────────────
-function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
-function closeOnOverlay(e, id) { if (e.target.id === id) closeModal(id); }
-function esc(s) { return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
-function fmtDate(iso) { return new Date(iso).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'America/Phoenix'}); }
-function fmtTime(iso) { return new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true,timeZone:'America/Phoenix'}); }
+// ─── ADMIN ─────────────────────────────────────────────────
+function openAdminModal() {
+  if(adminSession){renderAdminPanel();}else{renderAdminLogin();}
+  openModal('adminOverlay');
+}
 
-// ─── INIT — called after all functions defined ────────────────
-loadEvents();
+function renderAdminLogin() {
+  document.getElementById('adminModalBody').innerHTML=`
+    <div class="admin-login">
+      <h3>🔐 Coordinator Access</h3>
+      <p>Enter your coordinator PIN to manage events and surveys.</p>
+      <div class="form-group">
+        <input type="password" id="adminPin" placeholder="PIN" style="text-align:center;font-size:1.2rem;letter-spacing:6px" onkeydown="if(event.key==='Enter')checkAdminPin()">
+      </div>
+      <button class="btn-submit" style="width:100%" onclick="checkAdminPin()">Sign In</button>
+      <p style="margin-top:12px;font-size:0.78rem;color:var(--mid-gray)">Need access? Contact <a href="mailto:bridgettrhart@gmail.com" style="color:var(--green)">bridgettrhart&#64;gmail&#46;com</a></p>
+    </div>`;
+}
+
+function checkAdminPin() {
+  const pin=document.getElementById('adminPin')?.value;
+  const match=Object.entries(COORDINATOR_PINS).find(([u,p])=>p===pin);
+  if(match){adminSession={user:match[0],pin};renderAdminPanel();}
+  else{alert('Incorrect PIN. Please try again.');}
+}
+
+function renderAdminPanel() {
+  document.getElementById('adminModalBody').innerHTML=`
+    <div class="admin-tabs">
+      <button class="admin-tab active" id="tabEvents" onclick="switchAdminTab(this,'events')">📅 Events</button>
+      <button class="admin-tab" id="tabRsvps" onclick="switchAdminTab(this,'rsvps')">📋 RSVPs</button>
+      <button class="admin-tab" id="tabSurveys" onclick="switchAdminTab(this,'surveys')">📣 Surveys</button>
+    </div>
+    <div id="adminTabContent"></div>`;
+  renderAdminTab('events');
+}
+
+function switchAdminTab(btn,tab) {
+  document.querySelectorAll('.admin-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderAdminTab(tab);
+}
+
+async function renderAdminTab(tab) {
+  const container=document.getElementById('adminTabContent');
+  if(!container)return;
+
+  if(tab==='events'){
+    container.innerHTML=`
+      <div style="display:flex;justify-content:flex-end;margin-bottom:16px">
+        <button class="btn-submit" onclick="openEventEdit(null)">+ Add Event</button>
+      </div>
+      ${allEvents.map(e=>`
+        <div class="admin-row">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap">
+            <h4 style="margin:0">${esc(e.event_name)}<br><span style="font-size:0.8rem;font-weight:400;color:var(--mid-gray)">${fmtDate(e.date)} at ${fmtTime(e.date)}</span></h4>
+            <div style="display:flex;gap:6px;flex-wrap:wrap">
+              <button class="btn-edit" onclick="openEventEdit('${e.id}')">✏️ Edit</button>
+              <button class="btn-hide" onclick="toggleEventHide('${e.id}','${e.event_type}')">${e.event_type==='hidden'?'👁 Show':'🙈 Hide'}</button>
+            </div>
+          </div>
+          <p style="font-size:.82rem;color:var(--mid-gray);margin-top:6px">📍 ${esc(e.location||'TBD')}</p>
+        </div>`).join('')}`;
+
+  } else if(tab==='rsvps'){
+    const rsvpData=await api('rsvps');
+    const rsvps=(rsvpData.records||[]).map(r=>({id:r.id,...r.fields}));
+    if(!rsvps.length){container.innerHTML=`<div class="empty-state"><p>No RSVPs yet.</p></div>`;return;}
+    const byEvent={};
+    rsvps.forEach(r=>{
+      const evId=Array.isArray(r.event)?r.event[0]:r.event;
+      if(!byEvent[evId])byEvent[evId]=[];
+      byEvent[evId].push(r);
+    });
+    container.innerHTML=Object.entries(byEvent).map(([evId,items])=>{
+      const ev=allEvents.find(e=>e.id===evId);
+      return `<div class="admin-row">
+        <h4>${ev?esc(ev.event_name):'Unknown Event'} <span style="font-size:0.8rem;font-weight:400;color:var(--mid-gray)">(${items.length} RSVPs)</span></h4>
+        ${items.map(r=>`<div class="rsvp-summary">
+          <strong>${esc(r.full_name)}</strong> — ${esc(r.contact)} — Party of ${r.party_size||1}
+          ${r.notes?`<br><span style="color:var(--mid-gray);font-size:.8rem">${esc(r.notes)}</span>`:''}
+        </div>`).join('')}
+      </div>`;
+    }).join('');
+
+  } else if(tab==='surveys'){
+    container.innerHTML=`
+      <div style="display:flex;justify-content:flex-end;margin-bottom:16px">
+        <button class="btn-submit" onclick="openSurveyEdit(null)">+ Add Survey</button>
+      </div>
+      ${allSurveys.map(s=>`
+        <div class="admin-row">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap">
+            <div>
+              <h4 style="margin:0">${esc(s.title)}</h4>
+              <p style="font-size:.8rem;color:var(--mid-gray);margin-top:2px">${s.deadline?`Closes ${fmtDate(s.deadline+'T00:00:00')}`:'No deadline'}</p>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button class="btn-edit" onclick="openSurveyEdit('${s.id}')">✏️ Edit</button>
+              <label class="toggle" title="${s.active?'Active — click to hide':'Inactive — click to show'}">
+                <input type="checkbox" ${s.active?'checked':''} onchange="toggleSurvey('${s.id}',this.checked)">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>`).join('')}`;
+  }
+}
+
+// ─── EVENT EDIT ────────────────────────────────────────────
+function openEventEdit(id) {
+  editingEventId=id;
+  const e=id?allEvents.find(x=>x.id===id):null;
+  document.getElementById('eventEditTitle').textContent=id?'Edit Event':'Add Event';
+
+  const dateVal=e?.date?new Date(e.date).toLocaleDateString('en-CA',{timeZone:'America/Phoenix'}):'';
+  const timeVal=e?.date?new Date(e.date).toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',hour12:false,timeZone:'America/Phoenix'}):'';
+
+  document.getElementById('eventEditBody').innerHTML=`
+    <div class="form-group"><label>Event Name *</label><input type="text" id="eName" value="${esc(e?.event_name||'')}" placeholder="e.g. Movie at the Pool"></div>
+    <div class="form-row">
+      <div class="form-group"><label>Date *</label><input type="date" id="eDate" value="${dateVal}"></div>
+      <div class="form-group"><label>Time *</label><input type="time" id="eTime" value="${timeVal}"></div>
+    </div>
+    <div class="form-group"><label>Location</label><input type="text" id="eLocation" value="${esc(e?.location||'')}" placeholder="e.g. Dobson Terrace Pool"></div>
+    <div class="form-group"><label>Description</label><textarea id="eDesc" placeholder="Describe the event...">${esc(e?.description||'')}</textarea></div>
+    <div class="form-group"><label>Event Type</label>
+      <select id="eType">
+        <option value="event" ${e?.event_type==='event'?'selected':''}>Community Event</option>
+        <option value="prep_meeting" ${e?.event_type==='prep_meeting'?'selected':''}>Prep & Volunteers</option>
+        <option value="volunteer_shift" ${e?.event_type==='volunteer_shift'?'selected':''}>Volunteer Shift</option>
+      </select>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;padding:12px 0;border-top:1px solid var(--border)">
+      <label style="display:flex;align-items:center;gap:8px;font-weight:400;cursor:pointer"><input type="checkbox" id="eRsvp" ${e?.accepts_rsvp?'checked':''}> Accepts RSVPs</label>
+      <label style="display:flex;align-items:center;gap:8px;font-weight:400;cursor:pointer"><input type="checkbox" id="eVol" ${e?.accepts_volunteers?'checked':''}> Accepts Volunteers</label>
+      <label style="display:flex;align-items:center;gap:8px;font-weight:400;cursor:pointer"><input type="checkbox" id="eDon" ${e?.accepts_donations?'checked':''}> Accepts Donations</label>
+    </div>`;
+
+  document.getElementById('eventEditFooter').innerHTML=`
+    <button class="btn-cancel" onclick="closeModal('eventEditOverlay')">Cancel</button>
+    <button class="btn-submit" onclick="saveEvent()">Save Event</button>`;
+  openModal('eventEditOverlay');
+}
+
+async function saveEvent() {
+  const name=document.getElementById('eName')?.value.trim();
+  const date=document.getElementById('eDate')?.value;
+  const time=document.getElementById('eTime')?.value||'00:00';
+  const location=document.getElementById('eLocation')?.value.trim();
+  const description=document.getElementById('eDesc')?.value.trim();
+  const event_type=document.getElementById('eType')?.value;
+  const accepts_rsvp=document.getElementById('eRsvp')?.checked||false;
+  const accepts_volunteers=document.getElementById('eVol')?.checked||false;
+  const accepts_donations=document.getElementById('eDon')?.checked||false;
+  if(!name||!date){alert('Please enter an event name and date.');return;}
+
+  const btn=document.querySelector('#eventEditFooter .btn-submit');
+  btn.textContent='Saving…';btn.disabled=true;
+
+  const fields={event_name:name,date:`${date}T${time}:00.000Z`,location,description,event_type,accepts_rsvp,accepts_volunteers,accepts_donations};
+  try {
+    if(editingEventId){await apiPatch('events',editingEventId,fields);}
+    else{await apiPost('events',fields);}
+    await loadAll();
+    closeModal('eventEditOverlay');
+    renderAdminPanel();
+    switchAdminTab(document.getElementById('tabEvents'),'events');
+  } catch(e){alert('Something went wrong. Please try again.');btn.textContent='Save Event';btn.disabled=false;}
+}
+
+async function toggleEventHide(id,currentType) {
+  const newType=currentType==='hidden'?'event':'hidden';
+  await apiPatch('events',id,{event_type:newType});
+  await loadAll();
+  renderAdminPanel();
+}
+
+// ─── SURVEY EDIT ───────────────────────────────────────────
+function openSurveyEdit(id) {
+  editingSurveyId=id;
+  const s=id?allSurveys.find(x=>x.id===id):null;
+  document.getElementById('surveyEditTitle').textContent=id?'Edit Survey':'Add Survey';
+  const deadlineVal=s?.deadline||'';
+
+  document.getElementById('surveyEditBody').innerHTML=`
+    <div class="form-group"><label>Survey Title *</label><input type="text" id="sTitle" value="${esc(s?.title||'')}" placeholder="e.g. Pool Hours Interest Survey"></div>
+    <div class="form-group"><label>Description</label><textarea id="sDesc" placeholder="Tell neighbors what this survey is about...">${esc(s?.description||'')}</textarea></div>
+    <div class="form-group"><label>Google Form URL *</label><input type="text" id="sUrl" value="${esc(s?.form_url||'')}" placeholder="https://forms.gle/..."></div>
+    <div class="form-group"><label>Survey Type</label>
+      <select id="sType">
+        <option value="interest" ${s?.survey_type==='interest'?'selected':''}>Interest Survey</option>
+        <option value="rating" ${s?.survey_type==='rating'?'selected':''}>Rating / Annual Survey</option>
+        <option value="feedback" ${s?.survey_type==='feedback'?'selected':''}>Feedback Survey</option>
+        <option value="other" ${s?.survey_type==='other'?'selected':''}>Other</option>
+      </select>
+    </div>
+    <div class="form-group"><label>Deadline (optional)</label><input type="date" id="sDeadline" value="${deadlineVal}"></div>
+    <div style="padding:12px 0;border-top:1px solid var(--border)">
+      <label style="display:flex;align-items:center;gap:8px;font-weight:400;cursor:pointer"><input type="checkbox" id="sActive" ${s?.active?'checked':''}> Active (show on Community Voice page)</label>
+    </div>`;
+
+  document.getElementById('surveyEditFooter').innerHTML=`
+    <button class="btn-cancel" onclick="closeModal('surveyEditOverlay')">Cancel</button>
+    <button class="btn-submit" onclick="saveSurvey()">Save Survey</button>`;
+  openModal('surveyEditOverlay');
+}
+
+async function saveSurvey() {
+  const title=document.getElementById('sTitle')?.value.trim();
+  const description=document.getElementById('sDesc')?.value.trim();
+  const form_url=document.getElementById('sUrl')?.value.trim();
+  const survey_type=document.getElementById('sType')?.value;
+  const deadline=document.getElementById('sDeadline')?.value||null;
+  const active=document.getElementById('sActive')?.checked||false;
+  if(!title||!form_url){alert('Please enter a title and Google Form URL.');return;}
+
+  const btn=document.querySelector('#surveyEditFooter .btn-submit');
+  btn.textContent='Saving…';btn.disabled=true;
+  const fields={title,description,form_url,survey_type,active};
+  if(deadline)fields.deadline=deadline;
+
+  try {
+    if(editingSurveyId){await apiPatch('surveys',editingSurveyId,fields);}
+    else{await apiPost('surveys',fields);}
+    const survData=await api('surveys');
+    allSurveys=(survData.records||[]).map(r=>({id:r.id,...r.fields}));
+    closeModal('surveyEditOverlay');
+    renderAdminPanel();
+    switchAdminTab(document.getElementById('tabSurveys'),'surveys');
+  } catch(e){alert('Something went wrong. Please try again.');btn.textContent='Save Survey';btn.disabled=false;}
+}
+
+async function toggleSurvey(id,active) {
+  await apiPatch('surveys',id,{active});
+  const survData=await api('surveys');
+  allSurveys=(survData.records||[]).map(r=>({id:r.id,...r.fields}));
+}
+
+// ─── UTILS ─────────────────────────────────────────────────
+function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
+function closeOnOverlay(e,id){if(e.target.id===id)closeModal(id);}
+function esc(s){return String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');}
+function fmtDate(iso){if(!iso)return'';return new Date(iso).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',timeZone:'America/Phoenix'});}
+function fmtTime(iso){if(!iso)return'';return new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',hour12:true,timeZone:'America/Phoenix'});}
 </script>
 </body>
 </html>
