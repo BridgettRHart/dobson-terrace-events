@@ -630,7 +630,12 @@ async function saveEvent() {
   const btn=document.querySelector('#eventEditFooter .btn-submit');
   btn.textContent='Saving…';btn.disabled=true;
 
-  const fields={event_name:name,date:`${date}T${time}:00.000Z`,location,description,event_type,accepts_rsvp,accepts_volunteers,accepts_donations};
+  // Arizona is UTC-7 (no daylight saving). Convert local time to UTC for Airtable.
+  const localDateTime = new Date(`${date}T${time}:00`);
+  const utcDateTime = new Date(localDateTime.getTime() + (7 * 60 * 60 * 1000));
+  const isoString = utcDateTime.toISOString();
+
+  const fields={event_name:name,date:isoString,location,description,event_type,accepts_rsvp,accepts_volunteers,accepts_donations};
   try {
     if(editingEventId){await apiPatch('events',editingEventId,fields);}
     else{await apiPost('events',fields);}
