@@ -352,7 +352,7 @@ function renderEvents() {
         <div class="event-type-tag">${cfg.icon} ${cfg.label}</div>
         <div class="event-name">${esc(e.event_name)}</div>
         <div class="event-meta">
-          <div class="event-meta-row"><span>📅</span><span>${fmtDate(e.date)} at ${fmtTime(e.date)}</span></div>
+          <div class="event-meta-row"><span>📅</span><span>${fmtDate(e.date)} at ${fmtTime(e.date)}${e.end_time?' – '+esc(e.end_time):''}</span></div>
           <div class="event-meta-row"><span>📍</span><span>${esc(e.location||'TBD')}</span></div>
         </div>
         <div class="event-desc">${esc(e.description||'')}</div>
@@ -592,8 +592,9 @@ function openEventEdit(id) {
     <div class="form-group"><label>Event Name *</label><input type="text" id="eName" value="${esc(e?.event_name||'')}" placeholder="e.g. Movie at the Pool"></div>
     <div class="form-row">
       <div class="form-group"><label>Date *</label><input type="date" id="eDate" value="${dateVal}"></div>
-      <div class="form-group"><label>Time *</label><input type="time" id="eTime" value="${timeVal}"></div>
+      <div class="form-group"><label>Start Time *</label><input type="time" id="eTime" value="${timeVal}"></div>
     </div>
+    <div class="form-group"><label>End Time or End Date (optional)</label><input type="text" id="eEndTime" value="${esc(e?.end_time||'')}" placeholder="e.g. 11:00 AM, 9:00 PM, or November 30"><div class="form-hint">Leave blank if not needed. Displays on the event card.</div></div>
     <div class="form-group"><label>Location</label><input type="text" id="eLocation" value="${esc(e?.location||'')}" placeholder="e.g. Dobson Terrace Pool"></div>
     <div class="form-group"><label>Description</label><textarea id="eDesc" placeholder="Describe the event...">${esc(e?.description||'')}</textarea></div>
     <div class="form-group"><label>Event Type</label>
@@ -625,6 +626,7 @@ async function saveEvent() {
   const accepts_rsvp=document.getElementById('eRsvp')?.checked||false;
   const accepts_volunteers=document.getElementById('eVol')?.checked||false;
   const accepts_donations=document.getElementById('eDon')?.checked||false;
+  const end_time=document.getElementById('eEndTime')?.value.trim()||null;
   if(!name||!date){alert('Please enter an event name and date.');return;}
 
   const btn=document.querySelector('#eventEditFooter .btn-submit');
@@ -635,6 +637,7 @@ async function saveEvent() {
   const isoString = localDateTime.toISOString();
 
   const fields={event_name:name,date:isoString,location,description,event_type,accepts_rsvp,accepts_volunteers,accepts_donations};
+  if(end_time) fields.end_time = end_time;
   try {
     if(editingEventId){await apiPatch('events',editingEventId,fields);}
     else{await apiPost('events',fields);}
