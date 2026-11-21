@@ -65,6 +65,8 @@
   .btn-volunteer:hover{background:#a34d21;}
   .btn-donate{background:var(--white);color:var(--green);border:2px solid var(--green);padding:8px 18px;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all 0.15s;flex:1;text-align:center;}
   .btn-donate:hover{background:var(--green-pale);}
+  .btn-form{background:var(--green);color:var(--white);text-decoration:none;display:block;padding:9px 18px;border-radius:8px;font-size:0.85rem;font-weight:600;font-family:'DM Sans',sans-serif;flex:1;text-align:center;}
+  .btn-form:hover{background:#1e4a1f;}
 
   .loading-state{text-align:center;padding:60px 20px;color:var(--mid-gray);grid-column:1/-1;}
   .spinner{width:36px;height:36px;border:3px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px;}
@@ -150,7 +152,7 @@
     .main{padding:24px 16px;}
     .events-grid{grid-template-columns:1fr;gap:16px;}
     .event-footer{flex-direction:column;}
-    .btn-rsvp,.btn-volunteer,.btn-donate{width:100%;}
+    .btn-rsvp,.btn-volunteer,.btn-donate,.btn-form{width:100%;}
     .overlay{padding:0;align-items:flex-end;}
     .modal{max-width:100%;border-radius:var(--radius) var(--radius) 0 0;max-height:92vh;}
     .modal-footer{flex-direction:column-reverse;}
@@ -346,6 +348,7 @@ function renderEvents() {
     if(e.accepts_rsvp) buttons.push(`<button class="btn-rsvp" onclick="openRsvp('${e.id}')">📋 RSVP</button>`);
     if(e.accepts_volunteers) buttons.push(`<button class="btn-volunteer" onclick="openVolunteer('${e.id}')">🙋 Volunteer</button>`);
     if(e.accepts_donations) buttons.push(`<button class="btn-donate" onclick="openDonation('${e.id}')">🎁 Donate</button>`);
+    if(e.form_url && /^https?:\/\//i.test(e.form_url)) buttons.push(`<a class="btn-form" href="${esc(e.form_url)}" target="_blank" rel="noopener">${esc(e.form_label||'📝 Open Form')}</a>`);
     return `<div class="event-card">
       <div class="event-top ${colorClass}"></div>
       <div class="event-body">
@@ -594,6 +597,8 @@ function openEventEdit(id) {
       <div class="form-group"><label>Date *</label><input type="date" id="eDate" value="${dateVal}"></div>
       <div class="form-group"><label>Start Time *</label><input type="time" id="eTime" value="${timeVal}"></div>
     </div>
+    <div class="form-group"><label>Google Form Link (optional)</label><input type="url" id="eFormUrl" value="${esc(e?.form_url||'')}" placeholder="https://forms.gle/..."><div class="form-hint">Adds a button to the event card, e.g. registration or voting.</div></div>
+    <div class="form-group"><label>Form Button Label (optional)</label><input type="text" id="eFormLabel" value="${esc(e?.form_label||'')}" placeholder="e.g. Register Your House, Vote Now"></div>
     <div class="form-group"><label>End Time or End Date (optional)</label><input type="text" id="eEndTime" value="${esc(e?.end_time||'')}" placeholder="e.g. 11:00 AM, 9:00 PM, or November 30"><div class="form-hint">Leave blank if not needed. Displays on the event card.</div></div>
     <div class="form-group"><label>Location</label><input type="text" id="eLocation" value="${esc(e?.location||'')}" placeholder="e.g. Dobson Terrace Pool"></div>
     <div class="form-group"><label>Description</label><textarea id="eDesc" placeholder="Describe the event...">${esc(e?.description||'')}</textarea></div>
@@ -638,6 +643,10 @@ async function saveEvent() {
 
   const fields={event_name:name,date:isoString,location,description,event_type,accepts_rsvp,accepts_volunteers,accepts_donations};
   if(end_time) fields.end_time = end_time;
+  const form_url=document.getElementById('eFormUrl')?.value.trim()||'';
+  const form_label=document.getElementById('eFormLabel')?.value.trim()||'';
+  if(editingEventId||form_url){fields.form_url=form_url;}
+  if(editingEventId||form_label){fields.form_label=form_label;}
   try {
     if(editingEventId){await apiPatch('events',editingEventId,fields);}
     else{await apiPost('events',fields);}
